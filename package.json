@@ -1,6 +1,6 @@
 {
     "name": "portfolio",
-    "home page": "https://AungKaungSatt1.github.io/portfolio",
+    "home page": "https://aungkaungsatt1.github.io/portfolio",
     "version": "0.0.0",
     "type": "module",
     "scripts": {
@@ -12,6 +12,7 @@
         "deploy": "gh-pages -d dist"
     },
     "dependencies": {
+        "gh-pages": "^6.3.0",
         "react": "^19.1.1",
         "react-dom": "^19.1.1"
     },
