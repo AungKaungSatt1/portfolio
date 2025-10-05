@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Easy Recipes",
+        "photo": "/portfolio/Easy_Recipes.png",
+        "description": "A platform for people who love cooking, functions almost like a real world website."
+    },
+    {
+        "id": 2,
+        "name": "Social",
+        "photo": "/portfolio/Social.png",
+        "description": "A Social Media Platform where people interact."
+    },
+    {
+        "id": 3,
+        "name": "Shop",
+        "photo": "/portfolio/Shop.png",
+        "description": "An E-commerce website where people can buy things easily."
+    },
+    {
+        "id": 4,
+        "name": "Next Movies",
+        "photo": "/portfolio/Next_Movies.png",
+        "description": "A website to give a brief information and rating about a movie that users are going to watch. (used TMDB api)"
+    },
+    {
+        "id": 5,
+        "name": "Guess the Color",
+        "photo": "/portfolio/Guess_the_Color.png",
+        "description": "A game website I inspired from online with JS, CSS, and HTML."
+    },
+    {
+        "id": 6,
+        "name": "Portfolio",
+        "photo": "/portfolio/Portfolio.png",
+        "description": "A website that I created to understand CSS layouts"
+    }
+]
