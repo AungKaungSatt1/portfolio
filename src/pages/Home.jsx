@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import data from "../data/projects.json";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
+import { Code, CodepenLogo } from "phosphor-react";
+import { Link } from "react-router-dom";
 
 export default function Home() {
     const [projects, setProjects] = useState([]);
@@ -44,6 +46,12 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="hidden lg:block md:hidden sm:hidden">
+                    <div>
+                        <Code />
+                    </div>
+                    <div>
+                        <CodepenLogo />
+                    </div>
                     <DotLottieReact
                         className="w-[80vh] h-[80vh]"
                         src="/portfolio/programming.lottie"
@@ -52,15 +60,25 @@ export default function Home() {
                     />
                 </div>
             </div>
-            <div className="w-full mx-auto">
+            <div className="w-full mx-auto mb-[50px]">
                 <h1 className="text-center lg:text-start lg:ms-[85px] font-bold text-[25px] lg:text-[40px] md:text-[40px] sm:text-[25px] my-[50px]">
                     My Best Creation <strong className="text-(--additional-color)">.</strong>
                 </h1>
                 <div className="flex flex-wrap justify-center md:justify-center sm:justify-center w-full">
                     {projects.map((data) => {
+                        if (data.id > 4) return false;
                         return <Card data={data} />;
                     })}
                 </div>
+                <Link className="text-center block underline text-(--additional-color)">
+                    See More
+                </Link>
+            </div>
+            <div className="bg-(--secondary-color) text-(--white)">
+                <h1 className="text-center lg:text-start lg:ms-[85px] font-bold text-[25px] lg:text-[40px] md:text-[40px] sm:text-[25px] my-[50px]">
+                    Skill <strong className="text-(--additional-color)">.</strong>
+                </h1>
+                <h3>FrontEnd</h3>
             </div>
             <Footer />
         </div>
