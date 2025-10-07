@@ -1,0 +1,98 @@
+{
+    "frontend": [
+        {
+            "id": 1,
+            "name": "Javascript",
+            "icon": "/portfolio/Javascript.svg"
+        },
+        {
+            "id": 2,
+            "name": "React",
+            "icon": "/portfolio/React.svg"
+        },
+        {
+            "id": 3,
+            "name": "Tailwind",
+            "icon": "/portfolio/Tailwind.svg"
+        },
+        {
+            "id": 4,
+            "name": "NextJS",
+            "icon": "/portfolio/NextJS.svg"
+        },
+        {
+            "id": 5,
+            "name": "Material UI",
+            "icon": "/portfolio/Material_UI.svg"
+        },
+        {
+            "id": 6,
+            "name": "Bootstrap",
+            "icon": "/portfolio/Bootstrap.svg"
+        }
+    ],
+    "backend": [
+        {
+            "id": 1,
+            "name": "MongoDB",
+            "icon": "/portfolio/MongoDB.svg"
+        },
+        {
+            "id": 2,
+            "name": "NodeJS",
+            "icon": "/portfolio/NodeJS.svg"
+        },
+        {
+            "id": 3,
+            "name": "SQLite",
+            "icon": "/portfolio/SQLite.svg"
+        },
+        {
+            "id": 4,
+            "name": "ExpressJS",
+            "icon": "/portfolio/ExpressJS.svg"
+        },
+        {
+            "id": 5,
+            "name": "PHP",
+            "icon": "/portfolio/PHP.svg"
+        },
+        {
+            "id": 6,
+            "name": "PrismaDB",
+            "icon": "/portfolio/PrismaDB.svg"
+        }
+    ],
+    "tools": [
+        {
+            "id": 1,
+            "name": "Npm",
+            "icon": "/portfolio/Npm.svg"
+        },
+        {
+            "id": 2,
+            "name": "Docker",
+            "icon": "/portfolio/Docker.svg"
+        },
+        {
+            "id": 3,
+            "name": "Post Man",
+            "icon": "/portfolio/Postman.svg"
+        },
+        {
+            "id": 4,
+            "name": "Github",
+            "icon": "/portfolio/Github.svg"
+        },
+        {
+            "id": 5,
+            "name": "Sublime Text",
+            "icon": "/portfolio/SublimeText.svg"
+        },
+        {
+            "id": 6,
+            "name": "VsCode",
+            "icon": "/portfolio/VsCode.svg"
+        }
+    ]
+}

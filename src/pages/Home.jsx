@@ -1,23 +1,23 @@
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { useEffect, useState } from "react";
 import data from "../data/projects.json";
+import skills from "../data/skills.json";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 import { Code, CodepenLogo } from "phosphor-react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
+    let duration = 500;
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        (async () => {
-            await setProjects(data);
-        })();
+        setProjects(data);
     }, []);
 
     return (
         <div>
-            <div className="flex items-center justify-center gap-10 lg:pt-[50px]w-full h-[100vh] bg-linear-30 from-(--primary-color) to-(--secondary-color) flex-wrap">
+            <div className="flex items-center justify-center gap-10 lg:pt-[50px] w-full h-[100vh] bg-linear-30 from-(--primary-color) to-(--secondary-color) flex-wrap">
                 <div className="flex-col justify-center md:justify-center lg:w-[40%] md:w-[75%] sm:w-[75%]">
                     <span className="flex gap-2 lg:justify-start md:justify-center sm:justify-center justify-center">
                         <h2 className="text-[3em] font-bold cabin">I AM</h2>
@@ -46,8 +46,16 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="hidden lg:block md:hidden sm:hidden">
-                    <div>
-                        <Code />
+                    <div className="flex items-center w-[250px] border">
+                        <div>
+                            <div>
+                                <span>68%</span>
+                            </div>
+                        </div>
+                        <span className="w-[50%] text-center">
+                            <Code className="mx-auto" size="2em" />
+                            <p>FrontEnd</p>
+                        </span>
                     </div>
                     <div>
                         <CodepenLogo />
@@ -74,11 +82,70 @@ export default function Home() {
                     See More
                 </Link>
             </div>
-            <div className="bg-(--secondary-color) text-(--white)">
-                <h1 className="text-center lg:text-start lg:ms-[85px] font-bold text-[25px] lg:text-[40px] md:text-[40px] sm:text-[25px] my-[50px]">
+            <div className="bg-(--secondary-color) text-(--white) flex flex-col py-[50px] mb-[50px]">
+                <h1 className="text-center lg:text-start lg:ms-[65px] font-bold text-[25px] lg:text-[40px] md:text-[40px] sm:text-[25px] mb-[25px]">
                     Skill <strong className="text-(--additional-color)">.</strong>
                 </h1>
-                <h3>FrontEnd</h3>
+                <div className="flex flex-col lg:flex-row md:flex-col sm:flex-col items-center w-[90%] lg:justify-between md:items-center sm:items-center mx-auto gap-3 [&>*]:lg:w-[370px] [&>*]:md:w-[50%] [&>*]:sm:w-[75%] [&>*]:w-full">
+                    <div className="flex flex-col gap-5 flex-wrap">
+                        <h3 className="text-[25px] font-bold">FrontEnd</h3>
+                        <div className="flex flex-wrap justify-center bg-[rgb(3,7,30,0.5)] py-[15px] [&>*]:m-[20px] rounded-[15px]">
+                            {skills.frontend.map((data) => {
+                                return (
+                                    <div
+                                        className="w-[35%] flex justify-center items-center bg-(--dark-theme) rounded-[10px] py-[20px] flex-wrap"
+                                        data-aos="fade-up"
+                                        data-aos-duration={data.id % 2 ? duration : duration + 500}
+                                    >
+                                        <img className="w-[60px]" src={data.icon} alt="" />
+                                        <div className="w-full text-center mt-[10px]">
+                                            {data.name}
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                    <div className="flex flex-col gap-5 flex-wrap">
+                        <h3 className="text-[25px] font-bold">BackEnd</h3>
+                        <div className="flex flex-wrap justify-center bg-[rgb(3,7,30,0.5)] py-[15px] [&>*]:m-[20px] rounded-[15px] h-[560px]">
+                            {skills.backend.map((data) => {
+                                console.log(data.id);
+                                return (
+                                    <div
+                                        className="w-[35%] flex justify-center items-center bg-(--dark-theme) rounded-[10px] py-[20px] flex-wrap"
+                                        data-aos="fade-up"
+                                        data-aos-duration={data.id % 2 ? duration : duration + 500}
+                                    >
+                                        <img className="w-[60px]" src={data.icon} alt="" />
+                                        <div className="w-full text-center mt-[10px]">
+                                            {data.name}
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                    <div className="flex flex-col gap-5 flex-wrap">
+                        <h3 className="text-[25px] font-bold">Tools</h3>
+                        <div className="flex flex-wrap justify-center bg-[rgb(3,7,30,0.5)] py-[15px] [&>*]:m-[20px] rounded-[15px] h-[560px]">
+                            {skills.tools.map((data) => {
+                                return (
+                                    <div
+                                        className="w-[35%] flex justify-center items-center bg-(--dark-theme) rounded-[10px] py-[20px] flex-wrap"
+                                        data-aos="fade-up"
+                                        data-aos-duration={data.id % 2 ? duration : duration + 500}
+                                    >
+                                        <img className="w-[60px]" src={data.icon} alt="" />
+                                        <div className="w-full text-center mt-[10px]">
+                                            {data.name}
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </div>
             </div>
             <Footer />
         </div>
