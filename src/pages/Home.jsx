@@ -48,7 +48,7 @@ export default function Home() {
                     </div>
                 </div>
                 <motion.div
-                    className="absolute right-[0%] lg:right-[10%] md:right-[10%] sm:right-[3%] bottom-[5%] lg:top-[15%] md:bottom-[5%] flex items-center w-[275px] shadow-lg px-[25px] py-[10px] lg:py-[15px] md:py-[15px] sm:py-[10px] scale-75 lg:scale-100 md:scale-100 sm:scale-75 rounded-[50px] bg-(--primary-color) h-[100px]"
+                    className="absolute float-center lg:right-[10%] md:right-[10%] sm:right-[3%] top-[10%] lg:top-[15%] md:top-[78%] sm:top-[78%] flex items-center w-[275px] shadow-lg px-[25px] py-[10px] lg:py-[15px] md:py-[15px] sm:py-[10px] scale-75 lg:scale-100 md:scale-100 sm:scale-75 rounded-[50px] bg-(--primary-color) h-[100px]"
                     initial={{ scale: 0, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     transition={{
@@ -89,7 +89,7 @@ export default function Home() {
                     </span>
                 </motion.div>
                 <motion.div
-                    className="absolute left-[0%] lg:left-[45%] md:left-[5%] sm:left-[3%] flex items-center w-[275px] shadow-lg px-[25px] rounded-[50px] bg-(--primary-color) py-[10px] lg:py-[15px] md:py-[15px] sm:py-[10px] bottom-[5%] scale-75 lg:top-[70%] md:top-[78%] sm:bottom-[5%] h-[100px] lg:scale-100 md:scale-100 sm:scale-75"
+                    className="absolute float-center lg:left-[45%] md:left-[5%] sm:left-[3%] flex items-center w-[275px] shadow-lg px-[25px] rounded-[50px] bg-(--primary-color) py-[10px] lg:py-[15px] md:py-[15px] sm:py-[10px] bottom-[10%] scale-75 lg:top-[70%] md:top-[78%] sm:bottom-[5%] h-[100px] lg:scale-100 md:scale-100 sm:scale-75"
                     initial={{ scale: 0, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     transition={{

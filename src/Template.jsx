@@ -1,8 +1,9 @@
 import { ChatCircleDots, List } from "phosphor-react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function Template() {
+    const navigate = useNavigate();
     const [list, setList] = useState(false);
 
     return (
@@ -11,8 +12,8 @@ export default function Template() {
                 <div className="flex justify-between items-center">
                     <img className="inline-block" src="/portfolio/Logo.svg" alt="Logo" />
                     <ul className="hidden lg:inline-flex text-[1.3em] gap-5 [&>*]:cursor-pointer md:inline-flex sm:hidden">
-                        <li>Home</li>
-                        <li>Projects</li>
+                        <li onClick={() => navigate("/portfolio/")}>Home</li>
+                        <li onClick={() => navigate("/portfolio/projects")}>Projects</li>
                         <li>About</li>
                         <li>Contact</li>
                     </ul>

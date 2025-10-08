@@ -11,7 +11,9 @@ export default function Footer() {
                     <li>Contact</li>
                 </ul>
                 <span className="flex text-[2em] gap-5">
-                    <GithubLogo />
+                    <a href="https://github.com/AungKaungSatt1" target="_blank">
+                        <GithubLogo />
+                    </a>
                     <LinkedinLogo />
                 </span>
             </div>
