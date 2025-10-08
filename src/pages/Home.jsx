@@ -1,13 +1,15 @@
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import * as motion from "motion/react-client";
 import { useEffect, useState } from "react";
 import data from "../data/projects.json";
 import skills from "../data/skills.json";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
-import { Code, CodepenLogo } from "phosphor-react";
+import { Code, CodesandboxLogo } from "phosphor-react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
+    let dashArray = ((80 - 10) / 2) * Math.PI * 2;
     let duration = 500;
     const [projects, setProjects] = useState([]);
 
@@ -45,21 +47,89 @@ export default function Home() {
                         </button>
                     </div>
                 </div>
+                <motion.div
+                    className="absolute right-[0%] lg:right-[10%] md:right-[10%] sm:right-[3%] bottom-[5%] lg:top-[15%] md:bottom-[5%] flex items-center w-[275px] shadow-lg px-[25px] py-[10px] lg:py-[15px] md:py-[15px] sm:py-[10px] scale-75 lg:scale-100 md:scale-100 sm:scale-75 rounded-[50px] bg-(--primary-color) h-[100px]"
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    transition={{
+                        duration: 0.7,
+                        scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+                    }}
+                >
+                    <svg className="h-[75px] w-[75px]" viewBox="0 0 80 80">
+                        <circle
+                            className="fill-none stroke-gray-200"
+                            cx="40"
+                            cy="40"
+                            r={(80 - 10) / 2}
+                            strokeWidth="10px"
+                        />
+                        <motion.circle
+                            className="fill-none stroke-(--dark-theme)"
+                            cx="40"
+                            cy="40"
+                            r={(80 - 10) / 2}
+                            strokeWidth="10px"
+                            strokeLinecap="round"
+                            transform={`rotate(-90 ${80 / 2} ${80 / 2})`}
+                            initial={{ strokeDasharray: 0, strokeDashoffset: 0 }}
+                            whileInView={{
+                                strokeDasharray: dashArray,
+                                strokeDashoffset: dashArray - (dashArray * 80) / 100,
+                            }}
+                            transition={{ duration: 1, scale: { visualDuration: 0.4 } }}
+                        />
+                        <text x="50%" y="50%" dy=".3em" textAnchor="middle">
+                            68%
+                        </text>
+                    </svg>
+                    <span className="w-[50%] text-center">
+                        <Code className="mx-auto" size="2em" />
+                        <p>FrontEnd</p>
+                    </span>
+                </motion.div>
+                <motion.div
+                    className="absolute left-[0%] lg:left-[45%] md:left-[5%] sm:left-[3%] flex items-center w-[275px] shadow-lg px-[25px] rounded-[50px] bg-(--primary-color) py-[10px] lg:py-[15px] md:py-[15px] sm:py-[10px] bottom-[5%] scale-75 lg:top-[70%] md:top-[78%] sm:bottom-[5%] h-[100px] lg:scale-100 md:scale-100 sm:scale-75"
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    transition={{
+                        duration: 0.7,
+                        scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+                    }}
+                >
+                    <svg className="h-[75px] w-[75px]" viewBox="0 0 80 80">
+                        <circle
+                            className="fill-none stroke-gray-200"
+                            cx="40"
+                            cy="40"
+                            r={(80 - 10) / 2}
+                            strokeWidth="10px"
+                        />
+                        <motion.circle
+                            className="fill-none stroke-(--dark-theme)"
+                            cx="40"
+                            cy="40"
+                            r={(80 - 10) / 2}
+                            strokeWidth="10px"
+                            strokeLinecap="round"
+                            transform={`rotate(-90 ${80 / 2} ${80 / 2})`}
+                            initial={{ strokeDasharray: 0, strokeDashoffset: 0 }}
+                            whileInView={{
+                                strokeDasharray: dashArray,
+                                strokeDashoffset: dashArray - (dashArray * 80) / 100,
+                            }}
+                            transition={{ duration: 1, scale: { visualDuration: 0.4 } }}
+                        />
+                        <text x="50%" y="50%" dy=".3em" textAnchor="middle">
+                            80%
+                        </text>
+                    </svg>
+                    <span className="w-[50%] text-center">
+                        <CodesandboxLogo className="mx-auto" size="2em" />
+                        <p>Backend</p>
+                    </span>
+                </motion.div>
                 <div className="hidden lg:block md:hidden sm:hidden">
-                    <div className="flex items-center w-[250px] border">
-                        <div>
-                            <div>
-                                <span>68%</span>
-                            </div>
-                        </div>
-                        <span className="w-[50%] text-center">
-                            <Code className="mx-auto" size="2em" />
-                            <p>FrontEnd</p>
-                        </span>
-                    </div>
-                    <div>
-                        <CodepenLogo />
-                    </div>
                     <DotLottieReact
                         className="w-[80vh] h-[80vh]"
                         src="/portfolio/programming.lottie"
@@ -110,7 +180,6 @@ export default function Home() {
                         <h3 className="text-[25px] font-bold">BackEnd</h3>
                         <div className="flex flex-wrap justify-center bg-[rgb(3,7,30,0.5)] py-[15px] [&>*]:m-[20px] rounded-[15px] h-[560px]">
                             {skills.backend.map((data) => {
-                                console.log(data.id);
                                 return (
                                     <div
                                         className="w-[35%] flex justify-center items-center bg-(--dark-theme) rounded-[10px] py-[20px] flex-wrap"
