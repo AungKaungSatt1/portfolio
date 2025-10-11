@@ -22,7 +22,7 @@ export default function Home() {
             <div className="flex items-center justify-center gap-10 lg:pt-[50px] w-full h-[100vh] bg-linear-30 from-(--primary-color) to-(--secondary-color) flex-wrap">
                 <div className="flex-col justify-center md:justify-center lg:w-[40%] md:w-[75%] sm:w-[75%]">
                     <span className="flex gap-2 lg:justify-start md:justify-center sm:justify-center justify-center">
-                        <h2 className="text-[3em] font-bold cabin">I AM</h2>
+                        <h2 className="text-[3em] font-bold">I AM</h2>
                         <h1 className="pixel bg-linear-30 text-transparent bg-clip-text from-(--additional-color) to-[#7962FF] text-[4em]/18 font-bold">
                             JAKE
                         </h1>
@@ -145,7 +145,7 @@ export default function Home() {
                 <div className="flex flex-wrap justify-center md:justify-center sm:justify-center w-full">
                     {projects.map((data) => {
                         if (data.id > 4) return false;
-                        return <Card data={data} />;
+                        return <Card data={data} key={data.id} />;
                     })}
                 </div>
                 <Link className="text-center block underline text-(--additional-color)">
@@ -164,6 +164,7 @@ export default function Home() {
                                 return (
                                     <div
                                         className="w-[35%] flex justify-center items-center bg-(--dark-theme) rounded-[10px] py-[20px] flex-wrap"
+                                        key={data.id}
                                         data-aos="fade-up"
                                         data-aos-duration={data.id % 2 ? duration : duration + 500}
                                     >
@@ -183,6 +184,7 @@ export default function Home() {
                                 return (
                                     <div
                                         className="w-[35%] flex justify-center items-center bg-(--dark-theme) rounded-[10px] py-[20px] flex-wrap"
+                                        key={data.id}
                                         data-aos="fade-up"
                                         data-aos-duration={data.id % 2 ? duration : duration + 500}
                                     >
@@ -202,6 +204,7 @@ export default function Home() {
                                 return (
                                     <div
                                         className="w-[35%] flex justify-center items-center bg-(--dark-theme) rounded-[10px] py-[20px] flex-wrap"
+                                        key={data.id}
                                         data-aos="fade-up"
                                         data-aos-duration={data.id % 2 ? duration : duration + 500}
                                     >

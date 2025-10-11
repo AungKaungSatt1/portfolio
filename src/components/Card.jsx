@@ -37,7 +37,6 @@ export default function Card({ data }) {
     return (
         <div
             className="w-full lg:w-[40%] md:w-[60%] sm:w-full m-[20px] flex-col justify-center lg:justify-start h-[450px] transform-3d"
-            key={data.id}
             data-aos="fade-up"
             data-aos-anchor-placement="center-bottom"
             data-aos-duration={data.id % 2 ? duration : duration + 250}

@@ -11,7 +11,7 @@ export default function Template() {
             <nav className="fixed px-[15px] py-[10px] bg-(--primary-translucent-color) border border-(--white) top-5 left-[7%] w-[85%] rounded-[10px] shadow-lg backdrop-blur-[20px] z-1000 transition-all duration-500 ease-in-out">
                 <div className="flex justify-between items-center">
                     <img className="inline-block" src="/portfolio/Logo.svg" alt="Logo" />
-                    <ul className="hidden lg:inline-flex text-[1.3em] gap-5 [&>*]:cursor-pointer md:inline-flex sm:hidden">
+                    <ul className="hidden lg:inline-flex text-[1.2em] gap-5 [&>*]:cursor-pointer md:inline-flex sm:hidden [&>*]:font-bold">
                         <li onClick={() => navigate("/portfolio/")}>Home</li>
                         <li onClick={() => navigate("/portfolio/projects")}>Projects</li>
                         <li>About</li>

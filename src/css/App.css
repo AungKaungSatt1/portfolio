@@ -5,6 +5,16 @@
     src: url("/src/assets/MergeOne-Regular.ttf");
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Cabin";
+    src: url("../assets/Cabin_static/Cabin-Regular.ttf");
+}
+
 body {
     background-color: var(--primary-color);
 }
