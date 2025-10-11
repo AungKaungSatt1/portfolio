@@ -36,8 +36,8 @@ export default function Template() {
                 </div>
                 {list && (
                     <ul className="flex-col [&>*]:hover:bg-(--additional-color) [&>*]:p-[10px] [&>*]:hover:text-(--white) mt-[10px] [&>*]:transition-all [&>*]:duration-500 [&>*]:ease-in-out">
-                        <li>Home</li>
-                        <li>Projects</li>
+                        <li onClick={() => navigate("/portfolio")}>Home</li>
+                        <li onClick={() => navigate("/portfolio/projects")}>Projects</li>
                         <li>About</li>
                         <li>Contact</li>
                     </ul>
