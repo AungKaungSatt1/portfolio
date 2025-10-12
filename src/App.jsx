@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { createBrowserRouter, RouterProvider, HashRouter as Router } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Template from "./Template";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
