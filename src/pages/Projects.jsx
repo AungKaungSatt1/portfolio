@@ -53,7 +53,7 @@ export default function Projects() {
                                         ? {
                                               zIndex: 2,
                                               position: "absolute",
-                                              top: "23%",
+                                              top: "25%",
                                           }
                                         : {
                                               position: data.id == lastItem ? "absolute" : "",
@@ -72,7 +72,7 @@ export default function Projects() {
                             </motion.div>
                         );
                     })}
-                    <p className="block text-center absolute z-2 bottom-[15%] lg:bottom-[25%] md:bottom-[25%] sm:bottom-[15%] text-[1.3em] font-bold">
+                    <p className="block text-center absolute z-2 bottom-[15%] lg:bottom-[25%] md:bottom-[25%] sm:bottom-[8%] text-[1.3em] font-bold">
                         {projects.map((data) => {
                             return data.id == item ? data.name : "";
                         })}
