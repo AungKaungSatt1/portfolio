@@ -1,5 +1,5 @@
 import { ChatCircleDots, List } from "phosphor-react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function Template() {
@@ -13,7 +13,7 @@ export default function Template() {
                     <img className="inline-block" src="/portfolio/Logo.svg" alt="Logo" />
                     <ul className="hidden lg:inline-flex text-[1.2em] gap-5 [&>*]:cursor-pointer md:inline-flex sm:hidden [&>*]:font-bold">
                         <li onClick={() => navigate("/portfolio/")}>Home</li>
-                        <li onClick={() => navigate("/portfolio/projects")}>Projects</li>
+                        <Link to={"/portfolio/projects"}>Projects</Link>
                         <li>About</li>
                         <li>Contact</li>
                     </ul>
