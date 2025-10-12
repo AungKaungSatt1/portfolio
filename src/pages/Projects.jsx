@@ -21,7 +21,7 @@ export default function Projects() {
                 <div className="absolute top-0 bg-[rgb(250,250,252,0.1)] backdrop-blur-[3px] w-full h-full z-1"></div>
 
                 <motion.span
-                    className="absolute z-10 p-[5px] lg:p-[15px] md:p-[15px] sm:p-[10px] text-(--white) bg-(--dark-theme-translucent-color) backdrop-blur-[3px] border border-(--white) rounded-[50px] top-[40vh] lg:top-[40vh] md:top-[40vh] sm:top-[50vh] right-[0%] lg:right-[20%] md:right-[15%] sm:right-[0%] cursor-pointer"
+                    className="absolute z-10 p-[5px] lg:p-[15px] md:p-[15px] sm:p-[10px] text-(--white) bg-(--dark-theme-translucent-color) backdrop-blur-[3px] border border-(--white) rounded-[50px] top-[35vh] lg:top-[40vh] md:top-[40vh] sm:top-[50vh] right-[0%] lg:right-[20%] md:right-[15%] sm:right-[0%] cursor-pointer"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     whileHover={{ scale: 1.1 }}
@@ -79,7 +79,7 @@ export default function Projects() {
                     </p>
                 </div>
                 <motion.span
-                    className="absolute z-10 p-[5px] lg:p-[15px] md:p-[15px] sm:p-[10px] text-(--white) bg-(--dark-theme-translucent-color) backdrop-blur-[3px] border border-(--white) rounded-[50px] top-[40vh] lg:top-[40vh] md:top-[40vh] sm:top-[50vh] left-[0%] lg:left-[20%] md:left-[15%] sm:left-[0%] cursor-pointer"
+                    className="absolute z-10 p-[5px] lg:p-[15px] md:p-[15px] sm:p-[10px] text-(--white) bg-(--dark-theme-translucent-color) backdrop-blur-[3px] border border-(--white) rounded-[50px] top-[35vh] lg:top-[40vh] md:top-[40vh] sm:top-[50vh] left-[0%] lg:left-[20%] md:left-[15%] sm:left-[0%] cursor-pointer"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     whileHover={{ scale: 1.1 }}
