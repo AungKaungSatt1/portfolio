@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import * as motion from "motion/react-client";
 import Card from "../components/Card";
 import data from "../data/projects.json";
-import { CaretLeft, CaretRight } from "phosphor-react";
+import { CaretLeft, CaretRight, Translate } from "phosphor-react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 
@@ -17,7 +17,7 @@ export default function Projects() {
 
     return (
         <div>
-            <div className="h-[100vh] bg-linear-60 from-(--primary-color) to-(--secondary-color)">
+            <div className="h-[100vh] relative bg-linear-60 from-(--primary-color) to-(--secondary-color)">
                 <div className="absolute top-0 bg-[rgb(250,250,252,0.1)] backdrop-blur-[3px] w-full h-full z-1"></div>
 
                 <motion.span
@@ -34,7 +34,7 @@ export default function Projects() {
                     <CaretRight size="2em" />
                 </motion.span>
                 <div
-                    className="flex items-center justify-center h-full"
+                    className="flex items-center relative justify-center h-full"
                     style={{
                         flexDirection: item == 2 || item == 3 ? "row-reverse" : "row",
                     }}
@@ -53,7 +53,7 @@ export default function Projects() {
                                         ? {
                                               zIndex: 2,
                                               position: "absolute",
-                                              top: "25%",
+                                              top: "23%",
                                           }
                                         : {
                                               position: data.id == lastItem ? "absolute" : "",
@@ -72,7 +72,7 @@ export default function Projects() {
                             </motion.div>
                         );
                     })}
-                    <p className="block text-center absolute z-2 bottom-[15%] lg:bottom-[25%] md:bottom-[25%] sm:bottom-[8%] text-[1.3em] font-bold">
+                    <p className="block text-center absolute z-2 bottom-[15%] lg:bottom-[20%] md:bottom-[25%] sm:bottom-[8%] text-[1.3em] font-bold">
                         {projects.map((data) => {
                             return data.id == item ? data.name : "";
                         })}
