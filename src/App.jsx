@@ -36,7 +36,6 @@ const router = createBrowserRouter([
 export default function App() {
     return (
         <PortfolioContext.Provider>
-            <Router basename="/" />
             <RouterProvider router={router} />
         </PortfolioContext.Provider>
     );
