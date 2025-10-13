@@ -40,8 +40,8 @@ export default function App() {
                 </div>
                 {list && (
                     <ul className="flex-col [&>*]:hover:bg-(--additional-color) [&>*]:p-[10px] [&>*]:hover:text-(--white) mt-[10px] [&>*]:transition-all [&>*]:duration-500 [&>*]:ease-in-out">
-                        <li onClick={() => navigate("/portfolio")}>Home</li>
-                        <li onClick={() => navigate("/portfolio/projects")}>Projects</li>
+                        <li onClick={() => navigate("/")}>Home</li>
+                        <li onClick={() => navigate("/projects")}>Projects</li>
                         <li>About</li>
                         <li>Contact</li>
                     </ul>

@@ -29,8 +29,8 @@ export default function Projects() {
                     className="absolute z-10 p-[5px] lg:p-[15px] md:p-[15px] sm:p-[10px] text-(--white) bg-(--dark-theme-translucent-color) backdrop-blur-[3px] border border-(--white) rounded-[50px] top-[35vh] lg:top-[40vh] md:top-[40vh] sm:top-[50vh] right-[0%] lg:right-[20%] md:right-[15%] sm:right-[0%] cursor-pointer"
                     style={
                         clientWidth >= 360
-                            ? { top: clientWidth >= 760 ? "35%" : "48%" }
-                            : { top: "37%" }
+                            ? { top: "47%" }
+                            : { top: clientWidth <= 360 ? "48%" : "30%" }
                     }
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
@@ -63,7 +63,6 @@ export default function Projects() {
                                         ? {
                                               zIndex: 2,
                                               position: "absolute",
-                                              top: document.body.clientWidth <= 360 ? "25%" : "20%",
                                           }
                                         : {
                                               position: data.id == lastItem ? "absolute" : "",
@@ -82,18 +81,18 @@ export default function Projects() {
                             </motion.div>
                         );
                     })}
-                    <p className="block text-center absolute z-2 bottom-[15%] lg:bottom-[20%] md:bottom-[25%] sm:bottom-[8%] text-[1.3em] font-bold">
+                    <p className="block text-center absolute z-2 bottom-[15%] lg:bottom-[15%] md:bottom-[10%] sm:bottom-[8%] text-[1.3em] font-bold">
                         {projects.map((data) => {
                             return data.id == item ? data.name : "";
                         })}
                     </p>
                 </div>
                 <motion.span
-                    className="absolute z-10 p-[5px] lg:p-[15px] md:p-[15px] sm:p-[10px] text-(--white) bg-(--dark-theme-translucent-color) backdrop-blur-[3px] border border-(--white) rounded-[50px] left-[0%] lg:left-[20%] md:left-[15%] sm:left-[0%] cursor-pointer"
+                    className="absolute z-10 p-[5px] lg:p-[15px] md:p-[15px] sm:p-[10px] text-(--white) bg-(--dark-theme-translucent-color) backdrop-blur-[3px] border border-(--white) rounded-[50px] top-[35vh] lg:top-[40vh] md:top-[40vh] sm:top-[50vh] left-[0%] lg:left-[20%] md:left-[15%] sm:left-[0%] cursor-pointer"
                     style={
                         clientWidth >= 360
-                            ? { top: clientWidth >= 760 ? "35%" : "48%" }
-                            : { top: clientWidth <= 360 ? "37%" : "20%" }
+                            ? { top: "47%" }
+                            : { top: clientWidth <= 360 ? "48%" : "30%" }
                     }
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
