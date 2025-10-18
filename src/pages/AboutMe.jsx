@@ -139,7 +139,7 @@ export default function AboutMe() {
                             </motion.h3>
                         </span>
                     </div>
-                    <div className="col-span-3 row-span-1 [&>*]:my-[30px] [&>*]:lg:ms-[15px] [&>*]:md:ms-[15px] [&>*]:ms-[-15px] [&>*]:sm:ms-[-15px]">
+                    <div className="col-span-3 row-span-1 [&>*]:my-[30px] [&>*]:lg:ms-[15px] [&>*]:md:ms-[15px] [&>*]:ms-[-40px] [&>*]:sm:ms-[-40px]">
                         <motion.p
                             initial={{ y: 10, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
@@ -196,7 +196,7 @@ export default function AboutMe() {
                             and did some projects to boost my understanding.
                         </motion.p>
                     </div>
-                    <div className="col-span-3 row-span-1 [&>*]:my-[30px] [&>*]:lg:ms-[15px] [&>*]:md:ms-[15px] [&>*]:ms-[-15px] [&>*]:sm:ms-[-15px]">
+                    <div className="col-span-3 row-span-1 [&>*]:my-[30px] [&>*]:lg:ms-[15px] [&>*]:md:ms-[15px] [&>*]:ms-[-40px] [&>*]:sm:ms-[-40px]">
                         <motion.p
                             initial={{ y: 10, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
