@@ -84,7 +84,6 @@ export default function AboutMe() {
                         </span>
                         <motion.div
                             id="scroll-indicator"
-                            className="h-[70vh] lg:h-[50vh] md:h-[50vh] sm:h-[60vh]"
                             style={{
                                 scaleY: scrollYProgress,
                                 position: "absolute",
@@ -92,6 +91,7 @@ export default function AboutMe() {
                                 left: 20,
                                 right: 0,
                                 width: 10,
+                                height: scrollYProgress,
                                 zIndex: -1,
                                 originY: 0,
                                 backgroundColor: "var(--dark-theme)",
