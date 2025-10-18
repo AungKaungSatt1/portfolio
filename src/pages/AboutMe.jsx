@@ -1,10 +1,27 @@
 import { Code, CodeSimple } from "phosphor-react";
 import { motion, useScroll } from "motion/react";
 import Footer from "../components/Footer";
+import { useEffect, useRef, useState } from "react";
 
 export default function AboutMe() {
+    const frontendRef = useRef();
+    const backendRef = useRef();
+    const [distance, setDistance] = useState(0);
     const { scrollYProgress } = useScroll();
     const infiniteCarouselItems = ["Javascript", "React", "NextJS", "Tailwind", "MongoDB"];
+
+    useEffect(() => {
+        const frontendPosition = frontendRef.current.getBoundingClientRect();
+        const backendRefPosition = backendRef.current.getBoundingClientRect();
+
+        const dx = frontendPosition.left - backendRefPosition.left;
+        const dy = frontendPosition.top - backendRefPosition.top;
+
+        const calculatedDistance = Math.sqrt(dx * dx + dy * dy);
+        setDistance(calculatedDistance);
+
+        console.log(calculatedDistance);
+    }, [frontendRef, backendRef]);
 
     return (
         <div>
@@ -58,7 +75,7 @@ export default function AboutMe() {
                 </h1>
                 <div className="grid grid-cols-4 grid-row-2">
                     <div className="relative col-span-1 row-span-2 mt-[-50px] lg:mt-[0px] md:mt-[0px] sm:mt-[-50px]">
-                        <span className="flex absolute items-center mt-[15px]">
+                        <span className="flex absolute items-center mt-[15px]" ref={frontendRef}>
                             <motion.span
                                 className="bg-(--secondary-color) h-[50px] w-[50px] flex justify-center items-center rounded-[50px]"
                                 initial={{ scale: 0 }}
@@ -91,13 +108,13 @@ export default function AboutMe() {
                                 left: 20,
                                 right: 0,
                                 width: 10,
-                                height: scrollYProgress,
+                                height: `${distance}px`,
                                 zIndex: -1,
                                 originY: 0,
                                 backgroundColor: "var(--dark-theme)",
                             }}
                         />
-                        <span className="flex absolute items-center top-[55%]">
+                        <span className="flex absolute items-center top-[55%]" ref={backendRef}>
                             <motion.span
                                 className="bg-(--secondary-color) h-[50px] w-[50px] flex justify-center items-center rounded-[50px]"
                                 initial={{ scale: 0 }}
