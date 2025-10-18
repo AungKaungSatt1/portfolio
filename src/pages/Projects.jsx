@@ -13,7 +13,6 @@ export default function Projects() {
 
     new ResizeObserver(() => {
         setClientWidth(document.body.clientWidth);
-        console.log(document.body.clientWidth);
     }).observe(document.body);
 
     useEffect(() => {
@@ -107,8 +106,8 @@ export default function Projects() {
                 </motion.span>
             </div>
             <div className="w-full mx-auto mb-[50px]">
-                <h1 className="text-center lg:text-start lg:ms-[85px] font-bold text-[25px] lg:text-[40px] md:text-[40px] sm:text-[25px] my-[50px]">
-                    My Best Creation <strong className="text-(--additional-color)">.</strong>
+                <h1 className="text-center lg:text-center font-bold text-[25px] lg:text-[40px] md:text-[40px] sm:text-[25px] my-[50px]">
+                    Projects <strong className="text-(--additional-color)">.</strong>
                 </h1>
                 <div className="flex flex-wrap justify-center md:justify-center sm:justify-center w-full">
                     {projects.map((data) => {

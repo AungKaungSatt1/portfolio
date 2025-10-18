@@ -3,6 +3,8 @@ import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { createContext, useState } from "react";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
+import AboutMe from "./pages/AboutMe";
+import Contact from "./pages/Contact";
 
 export const PortfolioContext = createContext();
 
@@ -17,9 +19,9 @@ export default function App() {
                     <img className="inline-block" src="/portfolio/Logo.svg" alt="Logo" />
                     <ul className="hidden lg:inline-flex text-[1.2em] gap-5 [&>*]:cursor-pointer md:inline-flex sm:hidden [&>*]:font-bold">
                         <li onClick={() => navigate("/")}>Home</li>
-                        <Link to={"/projects"}>Projects</Link>
-                        <li>About</li>
-                        <li>Contact</li>
+                        <li onClick={() => navigate("/projects")}>Projects</li>
+                        <li onClick={() => navigate("/about")}>About</li>
+                        <li onClick={() => navigate("/contact")}>Contact</li>
                     </ul>
                     <span className="hidden lg:inline-block md:inline-block sm:hidden text-(--primary-color) rounded-t-[50px] rounded-br-[50px] p-[2px] bg-(--dark-theme)">
                         <ChatCircleDots size="2em" />
@@ -42,8 +44,8 @@ export default function App() {
                     <ul className="flex-col [&>*]:hover:bg-(--additional-color) [&>*]:p-[10px] [&>*]:hover:text-(--white) mt-[10px] [&>*]:transition-all [&>*]:duration-500 [&>*]:ease-in-out">
                         <li onClick={() => navigate("/")}>Home</li>
                         <li onClick={() => navigate("/projects")}>Projects</li>
-                        <li>About</li>
-                        <li>Contact</li>
+                        <li onClick={() => navigate("/about")}>About</li>
+                        <li onClick={() => navigate("/contact")}>Contact</li>
                     </ul>
                 )}
             </nav>
@@ -51,6 +53,8 @@ export default function App() {
                 <Routes>
                     <Route exact path="/" element={<Home />} />
                     <Route path="/projects" element={<Projects />} />
+                    <Route path="/about" element={<AboutMe />} />
+                    <Route path="/contact" element={<Contact />} />
                 </Routes>
             </PortfolioContext.Provider>
         </>

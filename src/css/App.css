@@ -53,6 +53,24 @@ body {
     src: url("/src/assets/Cabin_static/Cabin-Regular.ttf");
 }
 
+.text-carousel:hover .infinite-carousel {
+    animation-play-state: paused;
+}
+
+.infinite-carousel {
+    display: inline-block;
+    animation: 15s slide infinite linear;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
 @keyframes cursor {
     50% {
         border-color: transparent;
