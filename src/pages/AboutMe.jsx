@@ -19,14 +19,12 @@ export default function AboutMe() {
 
         const calculatedDistance = Math.sqrt(dx * dx + dy * dy);
         setDistance(calculatedDistance);
-
-        console.log(calculatedDistance);
     }, [frontendRef, backendRef]);
 
     return (
         <div>
             <div className="flex flex-wrap h-[150vh] lg:h-[90vh] md:h-[90vh] sm:h-[150vh] w-full">
-                <div className="flex flex-col justify-center h-[430px] border lg:h-full md:h-full items-center w-[100%] lg:w-[50%] md:w-[50%] sm:w-[100%] text-center lg:text-start md:text-start sm:text-center sm:h-[330px]">
+                <div className="flex flex-col justify-center h-[430px] lg:h-full md:h-full items-center w-[100%] lg:w-[50%] md:w-[50%] sm:w-[100%] text-center lg:text-start md:text-start sm:text-center sm:h-[330px]">
                     <h1 className="text-[40px] lg:text-[50px] md:text-[50px] sm:text-[40px] font-bold lg:me-auto md:me-auto lg:ms-[100px] md:ms-[65px]">
                         About Me <strong className="text-(--additional-color)">.</strong>
                     </h1>
@@ -37,7 +35,7 @@ export default function AboutMe() {
                         development when I was 14 years old.
                     </p>
                 </div>
-                <div className="border h-[500px] w-full lg:w-[50%] md:w-[50%] sm:w-full">
+                <div className="h-[500px] flex items-center justify-center w-full lg:w-[50%] md:w-[50%] sm:w-full">
                     <img src="/portfolio/Next_Movies.png" alt="" />
                 </div>
             </div>
@@ -45,7 +43,7 @@ export default function AboutMe() {
                 <div className="[&>*]:mx-[20px] infinite-carousel">
                     {infiniteCarouselItems.map((item) => {
                         return (
-                            <span className="inline-flex items-center">
+                            <span className="inline-flex items-center" key={item}>
                                 <CodeSimple size="2em" />
                                 <span className="w-[170px] h-[50px] text-center text-[20px]/12 rounded-[15px] mx-[10px] bg-[rgb(3,7,30)]">
                                     {item}
@@ -58,7 +56,7 @@ export default function AboutMe() {
                 <div className="[&>*]:mx-[20px] infinite-carousel">
                     {infiniteCarouselItems.map((item) => {
                         return (
-                            <span className="inline-flex items-center">
+                            <span className="inline-flex items-center" key={item}>
                                 <CodeSimple size="2em" />
                                 <span className="w-[170px] h-[50px] text-center text-[20px]/12 rounded-[15px] mx-[10px] bg-[rgb(3,7,30)]">
                                     {item}

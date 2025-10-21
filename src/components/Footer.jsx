@@ -18,8 +18,8 @@ export default function Footer() {
                 </span>
             </div>
             <div className="flex flex-col lg:flex-row md:flex-row sm:flex-col items-center lg:justify-between md:justify-between sm:items-center flex-wrap">
-                <button className="border border-(--dark-theme) text-(--dark-theme) px-[40px] py-[10px] rounded-[10px] hover:bg-(--dark-theme) hover:text-(--white) transition-all duration-500 ease-in-out mb-[15px] cursor-pointer">
-                    Browse Projects
+                <button className="border border-(--additional-color) text-(--additional-color) px-[40px] py-[10px] rounded-[10px] hover:bg-(--additional-color) hover:text-(--white) transition-all duration-500 ease-in-out mb-[15px] cursor-pointer">
+                    Download Resume
                 </button>
                 <p className="block sm:block">Made with ❤️ by Jake</p>
             </div>
