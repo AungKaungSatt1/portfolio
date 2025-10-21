@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 export default function Contact() {
     return (
         <div className="w-full h-[100vh] flex flex-wrap mt-[50px]">
-            <div className="w-[600px] lg:h-full md:h-[75%] sm:h-[75%] h-[75%] flex flex-col mx-auto">
+            <div className="w-[600px] lg:h-full md:h-[75%] sm:h-[70%] h-[70%] flex flex-col mx-auto">
                 <div className="mx-auto mt-[120px] flex flex-col items-center lg:items-start md:items-center">
                     <h1 className="text-[3em] font-bold mb-[30px]">
                         Get In Touch <strong className="text-(--additional-color)">.</strong>
