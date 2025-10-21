@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 export default function Contact() {
     return (
         <div className="w-full h-[100vh] flex flex-wrap mt-[50px]">
-            <div className="w-[600px] lg:h-full md:h-[75%] sm:h-[70%] h-[70%] flex flex-col mx-auto">
+            <div className="w-[540px] lg:h-full md:h-[650px] sm:h-[500px] h-[400px] flex flex-col mx-auto">
                 <div className="mx-auto mt-[120px] flex flex-col items-center lg:items-start md:items-center">
                     <h1 className="text-[3em] font-bold mb-[30px]">
                         Get In Touch <strong className="text-(--additional-color)">.</strong>
@@ -26,7 +26,7 @@ export default function Contact() {
                     </p>
                 </div>
             </div>
-            <div className="w-[600px] lg:h-full md:h-[75%] sm:h-[75%] h-[75%] flex items-center justify-center mx-auto mb-[50px]">
+            <div className="w-[540px] lg:h-full md:h-[650px] sm:h-[550px] h-[550px] flex items-center justify-center mx-auto mb-[50px]">
                 <form className="mx-auto [&>*]:w-[75%] [&>*]:mx-auto w-full [&>*]:transition-all [&>*]:ease-in-out [&>*]:duration-500">
                     <p className="opacity-50 text-[14px]">This will directly be sent to my email</p>
                     <div className="flex bg-(--dark-theme) items-center text-white py-[15px] px-[25px] text-[20px] mb-[15px] rounded-[15px]">

@@ -23,7 +23,7 @@ export default function AboutMe() {
 
     return (
         <div>
-            <div className="flex flex-wrap h-[150vh] lg:h-[90vh] md:h-[90vh] sm:h-[150vh] w-full">
+            <div className="flex flex-wrap h-[120vh] lg:h-[90vh] md:h-[90vh] sm:h-[120vh] mt-[50px] w-full">
                 <div className="flex flex-col justify-center h-[430px] lg:h-full md:h-full items-center w-[100%] lg:w-[50%] md:w-[50%] sm:w-[100%] text-center lg:text-start md:text-start sm:text-center sm:h-[330px]">
                     <h1 className="text-[40px] lg:text-[50px] md:text-[50px] sm:text-[40px] font-bold lg:me-auto md:me-auto lg:ms-[100px] md:ms-[65px]">
                         About Me <strong className="text-(--additional-color)">.</strong>
@@ -35,7 +35,7 @@ export default function AboutMe() {
                         development when I was 14 years old.
                     </p>
                 </div>
-                <div className="h-[500px] flex items-center justify-center w-full lg:w-[50%] md:w-[50%] sm:w-full">
+                <div className="h-[400px] flex items-center justify-center w-full lg:w-[50%] md:w-[50%] sm:w-full">
                     <img src="/portfolio/Next_Movies.png" alt="" />
                 </div>
             </div>
@@ -112,7 +112,10 @@ export default function AboutMe() {
                                 backgroundColor: "var(--dark-theme)",
                             }}
                         />
-                        <span className="flex absolute items-center top-[55%]" ref={backendRef}>
+                        <span
+                            className="flex absolute items-center lg:top-[55%] md:top-[60%] sm:top-[55%] top-[55%]"
+                            ref={backendRef}
+                        >
                             <motion.span
                                 className="bg-(--secondary-color) h-[50px] w-[50px] flex justify-center items-center rounded-[50px]"
                                 initial={{ scale: 0 }}
@@ -137,7 +140,7 @@ export default function AboutMe() {
                             </motion.h3>
                         </span>
                     </div>
-                    <div className="col-span-3 row-span-1 [&>*]:my-[30px] [&>*]:lg:ms-[15px] [&>*]:md:ms-[15px] [&>*]:ms-[-40px] [&>*]:sm:ms-[-40px]">
+                    <div className="col-span-3 row-span-1 [&>*]:my-[30px] [&>*]:lg:ms-[15px] [&>*]:md:ms-[15px] [&>*]:ms-[-40px] [&>*]:sm:ms-[-100px] mb-[20px]">
                         <motion.p
                             initial={{ y: 10, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
@@ -194,7 +197,7 @@ export default function AboutMe() {
                             and did some projects to boost my understanding.
                         </motion.p>
                     </div>
-                    <div className="col-span-3 row-span-1 [&>*]:my-[30px] [&>*]:lg:ms-[15px] [&>*]:md:ms-[15px] [&>*]:ms-[-40px] [&>*]:sm:ms-[-40px]">
+                    <div className="col-span-3 row-span-1 [&>*]:my-[30px] [&>*]:lg:ms-[15px] [&>*]:md:ms-[15px] [&>*]:ms-[-40px] [&>*]:sm:ms-[-100px] mt-[20px]">
                         <motion.p
                             initial={{ y: 10, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
