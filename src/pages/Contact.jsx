@@ -68,6 +68,7 @@ export default function Contact() {
                             placeholder="Email..."
                         />
                     </div>
+                    <input type="text" className="hidden" defaultValue={new Date()} name="time" />
                     <div className="flex bg-(--dark-theme) items-center text-white py-[15px] px-[25px] text-[20px] mb-[15px] rounded-[15px]">
                         <input
                             className="focus:outline-0 w-full placeholder:text-[16px] placeholder:text-(--primary-color)"
