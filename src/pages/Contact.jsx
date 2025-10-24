@@ -1,12 +1,30 @@
-import { Envelope, Phone } from "phosphor-react";
+import { CheckCircle, Envelope, Phone } from "phosphor-react";
 import Footer from "../components/Footer";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { AnimatePresence } from "motion/react";
+import * as motion from "motion/react-client";
 
 const public_key = import.meta.env.VITE_PUBLIC_KEY;
 
 export default function Contact() {
     const form = useRef();
+    const [popup, setPopup] = useState(false);
+    const [counter, setCounter] = useState(3);
+
+    useEffect(() => {
+        if (popup) {
+            if (counter > 0) {
+                const timer = setTimeout(() => setCounter(counter - 1), 1000);
+                return () => {
+                    clearTimeout(timer);
+                };
+            }
+
+            setPopup(null);
+            setCounter(3);
+        }
+    }, [counter, popup]);
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -23,10 +41,25 @@ export default function Contact() {
                     console.log("failed", err);
                 }
             );
+        e.target.reset();
+        setPopup(true);
     };
 
     return (
         <div className="w-full h-[100vh] flex flex-wrap mt-[50px]">
+            <AnimatePresence initial={false}>
+                {popup && (
+                    <motion.div
+                        initial={{ y: 150, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: 150, opacity: 0 }}
+                        className="fixed z-10000000 bottom-[7%] lg:right-[45%] md:right-[40%] sm:right-[35%] right-[30%] bg-(--dark-theme) p-[15px] w-[200px] h-[50px] flex justify-between text-white rounded-[5px] shadow-lg shadow-[rgb(255,255,255,0.3)]"
+                    >
+                        <span>Email Sent</span>
+                        <CheckCircle size="1.5em" />
+                    </motion.div>
+                )}
+            </AnimatePresence>
             <div className="w-[540px] lg:h-full md:h-[650px] sm:h-[500px] h-[400px] flex flex-col mx-auto">
                 <div className="mx-auto mt-[120px] flex flex-col items-center lg:items-start md:items-center">
                     <h1 className="text-[3em] font-bold mb-[30px]">
@@ -64,19 +97,19 @@ export default function Contact() {
                         <input
                             className="focus:outline-0 w-full placeholder:text-[16px] placeholder:text-(--primary-color)"
                             type="text"
+                            name="name"
+                            placeholder="Name..."
+                        />
+                    </div>
+                    <div className="flex bg-(--dark-theme) items-center text-white py-[15px] px-[25px] text-[20px] mb-[15px] rounded-[15px]">
+                        <input
+                            className="focus:outline-0 w-full placeholder:text-[16px] placeholder:text-(--primary-color)"
+                            type="text"
                             name="email"
                             placeholder="Email..."
                         />
                     </div>
                     <input type="text" className="hidden" defaultValue={new Date()} name="time" />
-                    <div className="flex bg-(--dark-theme) items-center text-white py-[15px] px-[25px] text-[20px] mb-[15px] rounded-[15px]">
-                        <input
-                            className="focus:outline-0 w-full placeholder:text-[16px] placeholder:text-(--primary-color)"
-                            type="text"
-                            name="name"
-                            placeholder="Name..."
-                        />
-                    </div>
                     <textarea
                         className="block bg-(--dark-theme) text-(--primary-color) p-[25px] text-[20px] placeholder:text-(--primary-color) placeholder:text-[16px] focus:outline-0 rounded-[15px] resize-none"
                         name="message"
