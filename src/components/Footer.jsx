@@ -21,7 +21,7 @@ export default function Footer() {
                 <button className="border border-(--additional-color) text-(--additional-color) px-[40px] py-[10px] rounded-[10px] hover:bg-(--additional-color) hover:text-(--white) transition-all duration-500 ease-in-out mb-[15px] cursor-pointer">
                     Download Resume
                 </button>
-                <p className="block sm:block">Made with ❤️ by Jake</p>
+                <p className="block sm:block">&copy; 2025. All Rights reserved.</p>
             </div>
         </footer>
     );

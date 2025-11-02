@@ -99,6 +99,7 @@ export default function Contact() {
                             type="text"
                             name="name"
                             placeholder="Name..."
+                            required
                         />
                     </div>
                     <div className="flex bg-(--dark-theme) items-center text-white py-[15px] px-[25px] text-[20px] mb-[15px] rounded-[15px]">
@@ -107,6 +108,7 @@ export default function Contact() {
                             type="text"
                             name="email"
                             placeholder="Email..."
+                            required
                         />
                     </div>
                     <input type="text" className="hidden" defaultValue={new Date()} name="time" />
@@ -116,6 +118,7 @@ export default function Contact() {
                         placeholder="Message..."
                         rows="3"
                         col="45"
+                        required
                     ></textarea>
                     <button className="block text-(--dark-theme) border border-(--dark-theme) mt-[20px] py-[15px] rounded-[15px] cursor-pointer hover:bg-(--dark-theme) hover:text-(--primary-color)">
                         Submit
