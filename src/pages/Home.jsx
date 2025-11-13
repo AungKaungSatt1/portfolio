@@ -75,7 +75,7 @@ export default function Home() {
                             initial={{ strokeDasharray: 0, strokeDashoffset: 0 }}
                             whileInView={{
                                 strokeDasharray: dashArray,
-                                strokeDashoffset: dashArray - (dashArray * 80) / 100,
+                                strokeDashoffset: dashArray - (dashArray * 68) / 100,
                             }}
                             transition={{ duration: 1, scale: { visualDuration: 0.4 } }}
                         />
@@ -148,7 +148,10 @@ export default function Home() {
                         return <Card data={data} key={data.id} />;
                     })}
                 </div>
-                <Link className="text-center block underline text-(--additional-color)">
+                <Link
+                    className="text-center block underline text-(--additional-color)"
+                    to={"/projects"}
+                >
                     See More
                 </Link>
             </div>
@@ -168,7 +171,12 @@ export default function Home() {
                                         data-aos="fade-up"
                                         data-aos-duration={data.id % 2 ? duration : duration + 500}
                                     >
-                                        <img className="w-[60px]" src={data.icon} alt="" />
+                                        <img
+                                            loading="lazy"
+                                            className="w-[60px]"
+                                            src={data.icon}
+                                            alt=""
+                                        />
                                         <div className="w-full text-center mt-[10px]">
                                             {data.name}
                                         </div>
@@ -188,7 +196,12 @@ export default function Home() {
                                         data-aos="fade-up"
                                         data-aos-duration={data.id % 2 ? duration : duration + 500}
                                     >
-                                        <img className="w-[60px]" src={data.icon} alt="" />
+                                        <img
+                                            loading="lazy"
+                                            className="w-[60px]"
+                                            src={data.icon}
+                                            alt=""
+                                        />
                                         <div className="w-full text-center mt-[10px]">
                                             {data.name}
                                         </div>
@@ -208,7 +221,12 @@ export default function Home() {
                                         data-aos="fade-up"
                                         data-aos-duration={data.id % 2 ? duration : duration + 500}
                                     >
-                                        <img className="w-[60px]" src={data.icon} alt="" />
+                                        <img
+                                            loading="lazy"
+                                            className="w-[60px]"
+                                            src={data.icon}
+                                            alt=""
+                                        />
                                         <div className="w-full text-center mt-[10px]">
                                             {data.name}
                                         </div>

@@ -3,36 +3,49 @@
         "id": 1,
         "name": "Easy Recipes",
         "photo": "/portfolio/Easy_Recipes.png",
-        "description": "A platform for people who love cooking, functions almost like a real world website."
+        "description": "A platform for people who love cooking, functions almost like a real world website.",
+        "languages": "HTML, CSS, Javascript, MongoDB, NodeJS, ExpressJS, React, TailwindCSS, Docker",
+        "challenges": "I had trouble installing the finished Api server code onto my deskstop because of the issues in the versions, and this was when I first heard about Docker.",
+        "outcomes": "Learnt the basic of Docker and Nginx, and how Docker functions."
     },
     {
         "id": 2,
         "name": "Social",
         "photo": "/portfolio/Social.png",
-        "description": "A Social Media Platform where people interact."
+        "description": "A Social Media Platform where people interact.",
+        "challenges": "I had a bump in using React, ExpressJS, Material UI, and MongoDB. I faced a lot of challenges.",
+        "outcomes": "I got to learn about pre-made UIs, Node, how object-based database works, and more about Api."
     },
     {
         "id": 3,
         "name": "Shop",
         "photo": "/portfolio/Shop.png",
-        "description": "An E-commerce website where people can buy things easily."
+        "description": "An E-commerce website where people can buy things easily.",
+        "challenges": "I created this project to review everything I used in Social app, but there was an obstacle in posting images into the database, and cropping images",
+        "outcomes": "I got to know about React image crop, and Multer."
     },
     {
         "id": 4,
         "name": "Next Movies",
         "photo": "/portfolio/Next_Movies.png",
-        "description": "A website to give a brief information and rating about a movie that users are going to watch. (used TMDB api)"
+        "description": "A website to give a brief information and rating about a movie that users are going to watch. (used TMDB api)",
+        "challenges": "My first step into using Api and NextJS after learning the basic of React, and have a lot of trouble debugging.",
+        "outcomes": "It contributes to my knowledge how Api functions, and shows me how serverside code works."
     },
     {
         "id": 5,
         "name": "Guess the Color",
         "photo": "/portfolio/Guess_the_Color.png",
-        "description": "A game website I inspired from online with JS, CSS, and HTML."
+        "description": "A game website I inspired from online with JS, CSS, and HTML.",
+        "challenges": "My first time learning Javascript and wanted to know more about it.",
+        "outcomes": "This project helps me deep dive into Javascript."
     },
     {
         "id": 6,
         "name": "Portfolio",
         "photo": "/portfolio/Portfolio.png",
-        "description": "A website that I created to understand CSS layouts"
+        "description": "A website that I created to understand CSS layouts",
+        "challenges": "I used to have a trouble with moving elements around and how CSS styles works when I started learning.",
+        "outcomes": "I got to know how flex and grid works, how inline elements function, and frameworks related to CSS."
     }
 ]

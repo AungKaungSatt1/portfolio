@@ -1,7 +1,10 @@
 import { ArrowCircleUpRight, X } from "phosphor-react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function Card({ data }) {
+    const navigate = useNavigate();
+
     let duration = 1500;
     const x = useMotionValue(0);
     const y = useMotionValue(0);
@@ -40,6 +43,7 @@ export default function Card({ data }) {
             data-aos="fade-up"
             data-aos-anchor-placement="center-bottom"
             data-aos-duration={data.id % 2 ? duration : duration + 250}
+            onClick={() => navigate(`/projects/${data.name}`)}
         >
             <motion.div
                 className="perspective-normal transform-3d cursor-pointer"
@@ -48,7 +52,12 @@ export default function Card({ data }) {
                 style={{ rotateX, rotateY, transform: `rotateZ(${rotateZ})` }}
             >
                 <div className="bg-linear-90 from-[#E9E9E9] to-(--secondary-color) py-[40px] px-[30px] rounded-[15px]">
-                    <img className="w-full rounded-[10px]" src={data.photo} alt={`${data.name}`} />
+                    <img
+                        loading="lazy"
+                        className="w-full rounded-[10px]"
+                        src={data.photo}
+                        alt={`${data.name}`}
+                    />
                 </div>
             </motion.div>
             <span className="flex items-center my-[10px]">

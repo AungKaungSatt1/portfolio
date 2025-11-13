@@ -4,12 +4,14 @@ import Card from "../components/Card";
 import data from "../data/projects.json";
 import { CaretLeft, CaretRight } from "phosphor-react";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
 
 export default function Projects() {
     const [item, setItem] = useState(1);
     const [lastItem, setLastItem] = useState(3);
     const [projects, setProjects] = useState([]);
     const [clientWidth, setClientWidth] = useState(document.body.clientHeight);
+    const navigate = useNavigate();
 
     new ResizeObserver(() => {
         setClientWidth(document.body.clientWidth);
@@ -53,6 +55,7 @@ export default function Projects() {
                         return (
                             <motion.div
                                 className="cursor-pointer w-full lg:w-[40%] md:w-[50%] sm:w-full rounded-[15px] shadow-lg border border-(--white)"
+                                onClick={() => navigate(`/projects/${data.name}`)}
                                 initial={{ scale: 0 }}
                                 animate={data.id != item ? { scale: 0.8 } : { scale: 1 }}
                                 layout
@@ -72,6 +75,7 @@ export default function Projects() {
                             >
                                 <div className="bg-linear-90 from-[#E9E9E9] to-(--secondary-color) p-[25px] rounded-[15px]">
                                     <img
+                                        loading="lazy"
                                         className="w-full rounded-[10px]"
                                         src={data.photo}
                                         alt={data.name}

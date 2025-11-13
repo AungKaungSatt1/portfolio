@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import AboutMe from "./pages/AboutMe";
 import Contact from "./pages/Contact";
+import ProjectDetail from "./pages/ProjectDetail";
 
 export const PortfolioContext = createContext();
 
@@ -53,6 +54,7 @@ export default function App() {
                 <Routes>
                     <Route exact path="/" element={<Home />} />
                     <Route path="/projects" element={<Projects />} />
+                    <Route path="/projects/:name" element={<ProjectDetail />} />
                     <Route path="/about" element={<AboutMe />} />
                     <Route path="/contact" element={<Contact />} />
                 </Routes>
