@@ -18,9 +18,10 @@ export default function App() {
             <nav className="fixed px-[15px] py-[10px] bg-(--primary-translucent-color) border border-(--white) top-5 left-[7%] w-[85%] rounded-[10px] shadow-lg backdrop-blur-[20px] z-1000 transition-all duration-500 ease-in-out">
                 <div className="flex justify-between items-center">
                     <img
-                        className="inline-block"
+                        className="inline-block cursor-pointer"
                         src="/portfolio/Logo.svg"
                         alt="Logo"
+                        onClick={() => navigate("/")}
                     />
                     <ul className="hidden lg:inline-flex text-[1.2em] gap-5 [&>*]:cursor-pointer md:inline-flex sm:hidden [&>*]:hover:text-(--additional-color) [&>*]:transition-all [&>*]:duration-300 [&>*]:ease-in-out">
                         <li onClick={() => navigate("/")}>Home</li>
@@ -28,7 +29,10 @@ export default function App() {
                         <li onClick={() => navigate("/about")}>About</li>
                         <li onClick={() => navigate("/contact")}>Contact</li>
                     </ul>
-                    <span className="hidden lg:inline-block md:inline-block sm:hidden text-(--primary-color) rounded-t-[50px] rounded-br-[50px] p-[2px] bg-(--dark-theme)">
+                    <span
+                        className="hidden lg:inline-block md:inline-block sm:hidden text-(--primary-color) rounded-t-[50px] rounded-br-[50px] p-[2px] bg-(--dark-theme) cursor-pointer"
+                        onClick={() => navigate("/contact")}
+                    >
                         <ChatCircleDots size="2em" />
                     </span>
                     <span

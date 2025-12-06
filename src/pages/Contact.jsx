@@ -63,22 +63,26 @@ export default function Contact() {
             <div className="w-[540px] lg:h-full md:h-[650px] sm:h-[500px] h-[400px] flex flex-col mx-auto">
                 <div className="mx-auto mt-[120px] flex flex-col items-center lg:items-start md:items-center">
                     <h1 className="text-[3em] font-bold mb-[30px]">
-                        Get In Touch <strong className="text-(--additional-color)">.</strong>
+                        Get In Touch{" "}
+                        <strong className="text-(--additional-color)">.</strong>
                     </h1>
                     <p className="w-[80%] lg:text-start md:text-center sm:text-center text-center">
-                        Please reach out to me from the information below and through the form.
+                        Please reach out to me from the information below and
+                        through the form.
                     </p>
                     <p className="flex items-center gap-5 my-[20px]">
                         <span>
                             <Envelope size="2em" />
                         </span>
-                        <span className="text-[1em]">aungkgsatt56@gmail.com</span>
+                        <span className="text-[1em]">
+                            aungkgsatt56@gmail.com
+                        </span>
                     </p>
-                    <p className="flex items-center">
+                    <p className="flex items-center gap-5 my-[20px]">
                         <span>
                             <Phone size="2em" />
                         </span>
-                        <span></span>
+                        <span className="text-[1em]">+60 179363425</span>
                     </p>
                 </div>
             </div>
@@ -89,9 +93,9 @@ export default function Contact() {
                     className="mx-auto [&>*]:w-[75%] [&>*]:mx-auto w-full [&>*]:transition-all [&>*]:ease-in-out [&>*]:duration-500"
                 >
                     <p className="opacity-50 text-[14px] mb-[10px]">
-                        Disclaimer: everything in this form will be sent to my email with the help
-                        of <strong>EmailJS</strong> (You can only send 200 emails a month with the
-                        service)
+                        Disclaimer: everything in this form will be sent to my
+                        email with the help of <strong>EmailJS</strong> (You can
+                        only send 200 emails a month with the service)
                     </p>
                     <div className="flex bg-(--dark-theme) items-center text-white py-[15px] px-[25px] text-[20px] mb-[15px] rounded-[15px]">
                         <input
@@ -111,7 +115,12 @@ export default function Contact() {
                             required
                         />
                     </div>
-                    <input type="text" className="hidden" defaultValue={new Date()} name="time" />
+                    <input
+                        type="text"
+                        className="hidden"
+                        defaultValue={new Date()}
+                        name="time"
+                    />
                     <textarea
                         className="block bg-(--dark-theme) text-(--primary-color) p-[25px] text-[20px] placeholder:text-(--primary-color) placeholder:text-[16px] focus:outline-0 rounded-[15px] resize-none"
                         name="message"
