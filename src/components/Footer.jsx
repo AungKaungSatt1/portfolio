@@ -5,13 +5,13 @@ export default function Footer() {
     const navigate = useNavigate();
 
     return (
-        <footer className="w-[85%] mx-auto mb-[25px] md:w-[95%] sm:w-[95%]">
+        <footer className="w-[85%] mx-auto mb-[25px] md:w-[95%] sm:w-[95%] mt-[50px]">
             <div className="flex flex-col lg:flex-row md:flex-row sm:flex-col items-center lg:justify-between md:justify-between sm:items-center mb-[15px] flex-wrap">
                 <ul className="flex justify-center lg:justify-start md:justify-start sm:justify-center gap-5 [&>*]:cursor-pointer text-[1.1em] mb-[15px]">
                     <li onClick={() => navigate("/")}>Home</li>
-                    <li onClick={() => navigate("/projects")}>Projects</li>
-                    <li onClick={() => navigate("/about")}>About</li>
-                    <li onClick={() => navigate("/contact")}>Contact</li>
+                    <li onClick={() => navigate("#projects")}>Projects</li>
+                    <li onClick={() => navigate("#about")}>About</li>
+                    <li onClick={() => navigate("#contact")}>Contact</li>
                 </ul>
                 <span className="flex text-[2em] gap-5">
                     <a href="https://github.com/AungKaungSatt1" target="_blank">

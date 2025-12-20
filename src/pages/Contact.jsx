@@ -46,7 +46,10 @@ export default function Contact() {
     };
 
     return (
-        <div className="w-full h-[100vh] flex flex-wrap mt-[50px]">
+        <div
+            className="w-full h-[100vh] flex flex-wrap lg:mt-[50px] md:mt-[50px] my-[50px]"
+            id="contact"
+        >
             <AnimatePresence initial={false}>
                 {popup && (
                     <motion.div
@@ -60,7 +63,7 @@ export default function Contact() {
                     </motion.div>
                 )}
             </AnimatePresence>
-            <div className="w-[540px] lg:h-full md:h-[650px] sm:h-[500px] h-[400px] flex flex-col mx-auto">
+            <div className="w-[540px] lg:h-[600px] md:h-[400px] sm:h-[400px] h-[400px] flex flex-col mx-auto">
                 <div className="mx-auto mt-[120px] flex flex-col items-center lg:items-start md:items-center">
                     <h1 className="text-[3em] font-bold mb-[30px]">
                         Get In Touch{" "}

@@ -4,10 +4,11 @@ import Footer from "../components/Footer";
 import { useEffect, useRef, useState } from "react";
 
 export default function AboutMe() {
+    const scrollTargetRef = useRef();
     const frontendRef = useRef();
     const backendRef = useRef();
     const [distance, setDistance] = useState(0);
-    const { scrollYProgress } = useScroll();
+    const { scrollYProgress } = useScroll({ target: scrollTargetRef });
     const infiniteCarouselItems = [
         "Javascript",
         "React",
@@ -28,13 +29,13 @@ export default function AboutMe() {
     }, [frontendRef, backendRef]);
 
     return (
-        <div>
-            <div className="flex flex-wrap h-[120vh] lg:h-[90vh] md:h-[90vh] sm:h-[120vh] mt-[50px] w-full">
-                <div className="flex flex-col justify-center h-[430px] lg:h-full md:h-full items-center w-[100%] lg:w-[50%] md:w-[50%] sm:w-[100%] text-center lg:text-start md:text-start sm:text-center sm:h-[330px]">
-                    <h1 className="text-[40px] lg:text-[50px] md:text-[50px] sm:text-[40px] font-bold lg:me-auto md:me-auto lg:ms-[15%] md:ms-[65px]">
-                        About Me{" "}
-                        <strong className="text-(--additional-color)">.</strong>
-                    </h1>
+        <div ref={scrollTargetRef} id="about">
+            <h1 className="text-center text-[40px] lg:text-[50px] md:text-[50px] sm:text-[40px] font-bold">
+                About Me{" "}
+                <strong className="text-(--additional-color)">.</strong>
+            </h1>
+            <div className="flex flex-wrap h-[120vh] lg:h-[80vh] md:h-[90vh] sm:h-[110vh] w-full">
+                <div className="flex flex-col justify-center lg:justify-center md:justify-start sm:justify-start h-[200px] lg:h-full md:h-full items-center w-[100%] lg:w-[50%] md:w-[50%] sm:w-[100%] text-center lg:text-start md:text-start sm:text-center sm:h-[330px]">
                     <p className="w-[70%]">
                         I am Jake. And, I am Burmese, based in Malaysia,
                         learning web development, also a college student in
@@ -44,7 +45,7 @@ export default function AboutMe() {
                     </p>
                 </div>
                 <div className="h-[400px] text-[100px] flex items-center my-auto justify-center w-full lg:w-[50%] md:w-[50%] sm:w-full">
-                    <img src="" alt="" />
+                    <img src={null} alt="" />
                     PHOTO HERE
                 </div>
             </div>
@@ -314,7 +315,6 @@ export default function AboutMe() {
                     </div>
                 </div>
             </div>
-            <Footer />
         </div>
     );
 }

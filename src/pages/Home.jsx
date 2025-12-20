@@ -1,21 +1,14 @@
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import * as motion from "motion/react-client";
-import { useEffect, useState } from "react";
-import data from "../data/projects.json";
 import skills from "../data/skills.json";
-import Card from "../components/Card";
-import Footer from "../components/Footer";
+import Projects from "./Projects";
 import { Code, CodesandboxLogo } from "phosphor-react";
-import { Link } from "react-router-dom";
+import AboutMe from "./AboutMe";
+import Contact from "./Contact";
 
 export default function Home() {
     let dashArray = ((80 - 10) / 2) * Math.PI * 2;
     let duration = 500;
-    const [projects, setProjects] = useState([]);
-
-    useEffect(() => {
-        setProjects(data);
-    }, []);
 
     return (
         <div>
@@ -35,8 +28,9 @@ export default function Home() {
                         </div>
                     </div>
                     <p className="lg:w-full md:w-full sm:w-full mb-[25px] lg:text-start md:text-center sm:text-center text-center">
-                        I am a college student, looking for a part-time junior position job or a
-                        part-time internship with flexible, corporative, and committed mind.
+                        I am a college student, looking for a part-time junior
+                        position job or a part-time internship with flexible,
+                        corporative, and committed mind.
                     </p>
                     <div className="flex gap-5 lg:justify-start md:justify-center  sm:justify-center justify-center [&>*]:cursor-pointer [&>*]:transition-all [&>*]:ease-in-out [&>*]:duration-500">
                         <button className="bg-(--additional-color) text-(--white) px-[40px] py-[10px] rounded-[10px] hover:bg-(--secondary-color)">
@@ -53,7 +47,11 @@ export default function Home() {
                     whileInView={{ scale: 1, opacity: 1 }}
                     transition={{
                         duration: 0.7,
-                        scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+                        scale: {
+                            type: "spring",
+                            visualDuration: 0.4,
+                            bounce: 0.5,
+                        },
                     }}
                 >
                     <svg className="h-[75px] w-[75px]" viewBox="0 0 80 80">
@@ -72,12 +70,19 @@ export default function Home() {
                             strokeWidth="10px"
                             strokeLinecap="round"
                             transform={`rotate(-90 ${80 / 2} ${80 / 2})`}
-                            initial={{ strokeDasharray: 0, strokeDashoffset: 0 }}
+                            initial={{
+                                strokeDasharray: 0,
+                                strokeDashoffset: 0,
+                            }}
                             whileInView={{
                                 strokeDasharray: dashArray,
-                                strokeDashoffset: dashArray - (dashArray * 68) / 100,
+                                strokeDashoffset:
+                                    dashArray - (dashArray * 68) / 100,
                             }}
-                            transition={{ duration: 1, scale: { visualDuration: 0.4 } }}
+                            transition={{
+                                duration: 1,
+                                scale: { visualDuration: 0.4 },
+                            }}
                         />
                         <text x="50%" y="50%" dy=".3em" textAnchor="middle">
                             68%
@@ -94,7 +99,11 @@ export default function Home() {
                     whileInView={{ scale: 1, opacity: 1 }}
                     transition={{
                         duration: 0.7,
-                        scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+                        scale: {
+                            type: "spring",
+                            visualDuration: 0.4,
+                            bounce: 0.5,
+                        },
                     }}
                 >
                     <svg className="h-[75px] w-[75px]" viewBox="0 0 80 80">
@@ -113,12 +122,19 @@ export default function Home() {
                             strokeWidth="10px"
                             strokeLinecap="round"
                             transform={`rotate(-90 ${80 / 2} ${80 / 2})`}
-                            initial={{ strokeDasharray: 0, strokeDashoffset: 0 }}
+                            initial={{
+                                strokeDasharray: 0,
+                                strokeDashoffset: 0,
+                            }}
                             whileInView={{
                                 strokeDasharray: dashArray,
-                                strokeDashoffset: dashArray - (dashArray * 80) / 100,
+                                strokeDashoffset:
+                                    dashArray - (dashArray * 80) / 100,
                             }}
-                            transition={{ duration: 1, scale: { visualDuration: 0.4 } }}
+                            transition={{
+                                duration: 1,
+                                scale: { visualDuration: 0.4 },
+                            }}
                         />
                         <text x="50%" y="50%" dy=".3em" textAnchor="middle">
                             80%
@@ -138,9 +154,10 @@ export default function Home() {
                     />
                 </div>
             </div>
-            <div className="w-full mx-auto mb-[50px]">
+            {/* <div className="w-full mx-auto mb-[50px]">
                 <h1 className="text-center lg:text-start lg:ms-[85px] font-bold text-[25px] lg:text-[40px] md:text-[40px] sm:text-[25px] my-[50px]">
-                    My Best Creation <strong className="text-(--additional-color)">.</strong>
+                    My Best Creation{" "}
+                    <strong className="text-(--additional-color)">.</strong>
                 </h1>
                 <div className="flex flex-wrap justify-center md:justify-center sm:justify-center w-full">
                     {projects.map((data) => {
@@ -154,10 +171,12 @@ export default function Home() {
                 >
                     See More
                 </Link>
-            </div>
+            </div> */}
+            <Projects />
             <div className="bg-(--secondary-color) text-(--white) flex flex-col py-[50px] mb-[50px]">
                 <h1 className="text-center lg:text-start lg:ms-[65px] font-bold text-[25px] lg:text-[40px] md:text-[40px] sm:text-[25px] mb-[25px]">
-                    Skill <strong className="text-(--additional-color)">.</strong>
+                    Skill{" "}
+                    <strong className="text-(--additional-color)">.</strong>
                 </h1>
                 <div className="flex flex-col lg:flex-row md:flex-col sm:flex-col items-center w-[90%] lg:justify-between md:items-center sm:items-center mx-auto gap-3 [&>*]:lg:w-[370px] [&>*]:md:w-[50%] [&>*]:sm:w-[75%] [&>*]:w-full">
                     <div className="flex flex-col gap-5 flex-wrap">
@@ -169,7 +188,11 @@ export default function Home() {
                                         className="w-[35%] flex justify-center items-center bg-(--dark-theme) rounded-[10px] py-[20px] flex-wrap"
                                         key={data.id}
                                         data-aos="fade-up"
-                                        data-aos-duration={data.id % 2 ? duration : duration + 500}
+                                        data-aos-duration={
+                                            data.id % 2
+                                                ? duration
+                                                : duration + 500
+                                        }
                                     >
                                         <img
                                             loading="lazy"
@@ -194,7 +217,11 @@ export default function Home() {
                                         className="w-[35%] flex justify-center items-center bg-(--dark-theme) rounded-[10px] py-[20px] flex-wrap"
                                         key={data.id}
                                         data-aos="fade-up"
-                                        data-aos-duration={data.id % 2 ? duration : duration + 500}
+                                        data-aos-duration={
+                                            data.id % 2
+                                                ? duration
+                                                : duration + 500
+                                        }
                                     >
                                         <img
                                             loading="lazy"
@@ -219,7 +246,11 @@ export default function Home() {
                                         className="w-[35%] flex justify-center items-center bg-(--dark-theme) rounded-[10px] py-[20px] flex-wrap"
                                         key={data.id}
                                         data-aos="fade-up"
-                                        data-aos-duration={data.id % 2 ? duration : duration + 500}
+                                        data-aos-duration={
+                                            data.id % 2
+                                                ? duration
+                                                : duration + 500
+                                        }
                                     >
                                         <img
                                             loading="lazy"
@@ -237,7 +268,8 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <Footer />
+            <AboutMe />
+            <Contact />
         </div>
     );
 }

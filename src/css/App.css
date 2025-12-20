@@ -5,6 +5,10 @@
     src: url("/src/assets/MergeOne-Regular.ttf");
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 h1,
 h2,
 h3,
@@ -36,7 +40,8 @@ body {
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
-    animation: typing 3s steps(18) infinite alternate, cursor 0.4s step-end infinite alternate;
+    animation: typing 3s steps(18) infinite alternate,
+        cursor 0.4s step-end infinite alternate;
     animation-delay: 2s;
     font-family: "Pixelify Sans", sans;
     src: url("/src/assets/Pixelify_Sans_static/PixelifySans-Regular.ttf");
