@@ -1,14 +1,14 @@
 import { Code, CodeSimple } from "phosphor-react";
 import { motion, useScroll } from "motion/react";
-import Footer from "../components/Footer";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { PortfolioContext } from "../App";
 
 export default function AboutMe() {
-    const scrollTargetRef = useRef();
+    const { aboutRef } = useContext(PortfolioContext);
     const frontendRef = useRef();
     const backendRef = useRef();
     const [distance, setDistance] = useState(0);
-    const { scrollYProgress } = useScroll({ target: scrollTargetRef });
+    const { scrollYProgress } = useScroll({ target: aboutRef });
     const infiniteCarouselItems = [
         "Javascript",
         "React",
@@ -29,7 +29,7 @@ export default function AboutMe() {
     }, [frontendRef, backendRef]);
 
     return (
-        <div ref={scrollTargetRef} id="about">
+        <div ref={aboutRef}>
             <h1 className="text-center text-[40px] lg:text-[50px] md:text-[50px] sm:text-[40px] font-bold">
                 About Me{" "}
                 <strong className="text-(--additional-color)">.</strong>

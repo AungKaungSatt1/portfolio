@@ -1,40 +1,84 @@
 import { ChatCircleDots, List } from "phosphor-react";
-import {
-    createBrowserRouter,
-    Route,
-    RouterProvider,
-    Routes,
-    useNavigate,
-} from "react-router-dom";
-import { createContext, useState } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import { createContext, useRef, useState } from "react";
 import Home from "./pages/Home";
 import ProjectDetail from "./pages/ProjectDetail";
-import Template from "./Template";
+import { Link } from "react-router-dom";
 
 export const PortfolioContext = createContext();
 
-const router = createBrowserRouter([
-    {
-        path: "/portfolio",
-        element: <Template />,
-        children: [
-            {
-                path: "/portfolio",
-                element: <Home />,
-            },
-            {
-                path: "/portfolio/projects/:name",
-                element: <ProjectDetail />,
-            },
-        ],
-    },
-]);
-
 export default function App() {
+    const projectsRef = useRef();
+    const aboutRef = useRef();
+    const contactRef = useRef();
+    const navigate = useNavigate();
+    const [list, setList] = useState(false);
+
     return (
         <>
-            <PortfolioContext.Provider>
-                <RouterProvider router={router} />
+            <nav className="fixed px-[15px] py-[10px] bg-(--primary-translucent-color) border border-(--white) top-5 left-[7%] w-[85%] rounded-[10px] shadow-lg backdrop-blur-[20px] z-1000 transition-all duration-500 ease-in-out">
+                <div className="flex justify-between items-center">
+                    <img
+                        className="inline-block cursor-pointer"
+                        src="/portfolio/Logo.svg"
+                        alt="Logo"
+                        onClick={() => navigate("/")}
+                    />
+                    <ul className="hidden lg:inline-flex text-[1.2em] gap-5 [&>*]:cursor-pointer md:inline-flex sm:hidden [&>*]:hover:text-(--additional-color) [&>*]:transition-all [&>*]:duration-300 [&>*]:ease-in-out">
+                        <Link onClick={() => navigate("/")}>Home</Link>
+                        <Link
+                            onClick={() => projectsRef.current.scrollIntoView()}
+                        >
+                            Projects
+                        </Link>
+                        <Link onClick={() => aboutRef.current.scrollIntoView()}>
+                            About
+                        </Link>
+                        <Link
+                            onClick={() => contactRef.current.scrollIntoView()}
+                        >
+                            Contact
+                        </Link>
+                    </ul>
+                    <span
+                        className="hidden lg:inline-block md:inline-block sm:hidden text-(--primary-color) rounded-t-[50px] rounded-br-[50px] p-[2px] bg-(--dark-theme) cursor-pointer"
+                        onClick={() => navigate("/contact")}
+                    >
+                        <ChatCircleDots size="2em" />
+                    </span>
+                    <span
+                        className="inline-block lg:hidden md:hidden sm:inline-block duration-500 cursor-pointer"
+                        style={
+                            list
+                                ? {
+                                      rotate: "-180deg",
+                                      color: "var(--additional-color)",
+                                  }
+                                : { rotate: "0deg", color: "var(--dark-theme)" }
+                        }
+                        onClick={() => {
+                            list ? setList(false) : setList(true);
+                        }}
+                    >
+                        <List size="2em" />
+                    </span>
+                </div>
+                {list && (
+                    <ul className="flex-col [&>*]:hover:bg-(--additional-color) [&>*]:p-[10px] [&>*]:hover:text-(--white) mt-[10px] [&>*]:transition-all [&>*]:duration-500 [&>*]:ease-in-out">
+                        <li onClick={() => navigate("/")}>Home</li>
+                        <li onClick={() => navigate("#projects")}>Projects</li>
+                        <li onClick={() => navigate("#about")}>About</li>
+                        <li onClick={() => navigate("#contact")}>Contact</li>
+                    </ul>
+                )}
+            </nav>
+            <PortfolioContext.Provider
+                value={{ projectsRef, aboutRef, contactRef }}
+            >
+                <Routes>
+                    <Route exact path="/" element={<Home />} />
+                    <Route path="/projects/:name" element={<ProjectDetail />} />
+                </Routes>
             </PortfolioContext.Provider>
         </>
     );

@@ -1,13 +1,15 @@
 import { CheckCircle, Envelope, Phone } from "phosphor-react";
 import Footer from "../components/Footer";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { AnimatePresence } from "motion/react";
 import * as motion from "motion/react-client";
+import { PortfolioContext } from "../App";
 
 const public_key = import.meta.env.VITE_PUBLIC_KEY;
 
 export default function Contact() {
+    const { contactRef } = useContext(PortfolioContext);
     const form = useRef();
     const [popup, setPopup] = useState(false);
     const [counter, setCounter] = useState(3);
@@ -48,7 +50,7 @@ export default function Contact() {
     return (
         <div
             className="w-full h-[100vh] flex flex-wrap lg:mt-[50px] md:mt-[50px] my-[50px]"
-            id="contact"
+            ref={contactRef}
         >
             <AnimatePresence initial={false}>
                 {popup && (

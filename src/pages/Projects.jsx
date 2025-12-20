@@ -1,28 +1,18 @@
-import { useEffect, useState } from "react";
-import * as motion from "motion/react-client";
+import { useContext, useEffect, useState } from "react";
 import Card from "../components/Card";
 import data from "../data/projects.json";
-import { CaretLeft, CaretRight } from "phosphor-react";
-import Footer from "../components/Footer";
-import { useNavigate } from "react-router-dom";
+import { PortfolioContext } from "../App";
 
 export default function Projects() {
-    const [item, setItem] = useState(1);
-    const [lastItem, setLastItem] = useState(3);
     const [projects, setProjects] = useState([]);
-    const [clientWidth, setClientWidth] = useState(document.body.clientHeight);
-    const navigate = useNavigate();
-
-    new ResizeObserver(() => {
-        setClientWidth(document.body.clientWidth);
-    }).observe(document.body);
+    const { projectsRef } = useContext(PortfolioContext);
 
     useEffect(() => {
         setProjects(data);
-    }, [item, lastItem]);
+    }, []);
 
     return (
-        <div id="projects">
+        <div id="projects" ref={projectsRef}>
             <h1 className="text-center lg:text-center font-bold text-[25px] lg:text-[40px] md:text-[40px] sm:text-[25px] my-[50px]">
                 Projects{" "}
                 <strong className="text-(--additional-color)">.</strong>
