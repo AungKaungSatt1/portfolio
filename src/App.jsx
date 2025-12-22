@@ -1,5 +1,5 @@
 import { ChatCircleDots, List } from "phosphor-react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { createContext, useRef, useState } from "react";
 import Home from "./pages/Home";
 import ProjectDetail from "./pages/ProjectDetail";
@@ -8,9 +8,11 @@ import { Link } from "react-router-dom";
 export const PortfolioContext = createContext();
 
 export default function App() {
+    const homeRef = useRef();
     const projectsRef = useRef();
     const aboutRef = useRef();
     const contactRef = useRef();
+    const { pathname } = useLocation();
     const navigate = useNavigate();
     const [list, setList] = useState(false);
 
@@ -22,27 +24,77 @@ export default function App() {
                         className="inline-block cursor-pointer"
                         src="/portfolio/Logo.svg"
                         alt="Logo"
-                        onClick={() => navigate("/")}
+                        onClick={() => {
+                            if (pathname === "/")
+                                homeRef.current.scrollIntoView();
+                            else navigate("/");
+                        }}
                     />
                     <ul className="hidden lg:inline-flex text-[1.2em] gap-5 [&>*]:cursor-pointer md:inline-flex sm:hidden [&>*]:hover:text-(--additional-color) [&>*]:transition-all [&>*]:duration-300 [&>*]:ease-in-out">
-                        <Link onClick={() => navigate("/")}>Home</Link>
-                        <Link
-                            onClick={() => projectsRef.current.scrollIntoView()}
+                        <li
+                            onClick={() => {
+                                if (pathname === "/")
+                                    homeRef.current.scrollIntoView();
+                                else navigate("/");
+                            }}
+                        >
+                            Home
+                        </li>
+                        <li
+                            onClick={() => {
+                                if (pathname === "/") {
+                                    projectsRef.current.scrollIntoView();
+                                } else {
+                                    navigate("/");
+                                    setTimeout(() => {
+                                        projectsRef.current.scrollIntoView();
+                                    }, 300);
+                                }
+                            }}
                         >
                             Projects
-                        </Link>
-                        <Link onClick={() => aboutRef.current.scrollIntoView()}>
+                        </li>
+                        <li
+                            onClick={() => {
+                                if (pathname === "/") {
+                                    aboutRef.current.scrollIntoView();
+                                } else {
+                                    navigate("/");
+                                    setTimeout(() => {
+                                        aboutRef.current.scrollIntoView();
+                                    }, 300);
+                                }
+                            }}
+                        >
                             About
-                        </Link>
-                        <Link
-                            onClick={() => contactRef.current.scrollIntoView()}
+                        </li>
+                        <li
+                            onClick={() => {
+                                if (pathname === "/") {
+                                    contactRef.current.scrollIntoView();
+                                } else {
+                                    navigate("/");
+                                    setTimeout(() => {
+                                        contactRef.current.scrollIntoView();
+                                    }, 300);
+                                }
+                            }}
                         >
                             Contact
-                        </Link>
+                        </li>
                     </ul>
                     <span
                         className="hidden lg:inline-block md:inline-block sm:hidden text-(--primary-color) rounded-t-[50px] rounded-br-[50px] p-[2px] bg-(--dark-theme) cursor-pointer"
-                        onClick={() => navigate("/contact")}
+                        onClick={() => {
+                            if (pathname === "/") {
+                                contactRef.current.scrollIntoView();
+                            } else {
+                                navigate("/");
+                                setTimeout(() => {
+                                    contactRef.current.scrollIntoView();
+                                }, 300);
+                            }
+                        }}
                     >
                         <ChatCircleDots size="2em" />
                     </span>
@@ -65,15 +117,62 @@ export default function App() {
                 </div>
                 {list && (
                     <ul className="flex-col [&>*]:hover:bg-(--additional-color) [&>*]:p-[10px] [&>*]:hover:text-(--white) mt-[10px] [&>*]:transition-all [&>*]:duration-500 [&>*]:ease-in-out">
-                        <li onClick={() => navigate("/")}>Home</li>
-                        <li onClick={() => navigate("#projects")}>Projects</li>
-                        <li onClick={() => navigate("#about")}>About</li>
-                        <li onClick={() => navigate("#contact")}>Contact</li>
+                        <li
+                            onClick={() => {
+                                if (pathname === "/")
+                                    homeRef.current.scrollIntoView();
+                                else navigate("/");
+                            }}
+                        >
+                            Home
+                        </li>
+                        <li
+                            onClick={() => {
+                                if (pathname === "/") {
+                                    projectsRef.current.scrollIntoView();
+                                } else {
+                                    navigate("/");
+                                    setTimeout(() => {
+                                        projectsRef.current.scrollIntoView();
+                                    }, 300);
+                                }
+                            }}
+                        >
+                            Projects
+                        </li>
+                        <li
+                            onClick={() => {
+                                if (pathname === "/") {
+                                    aboutRef.current.scrollIntoView();
+                                } else {
+                                    navigate("/");
+                                    setTimeout(() => {
+                                        contactRef.current.scrollIntoView();
+                                    }, 300);
+                                }
+                            }}
+                        >
+                            About
+                        </li>
+                        <li
+                            onClick={() => {
+                                if (pathname === "/") {
+                                    contactRef.current.scrollIntoView();
+                                } else {
+                                    navigate("/");
+                                    setTimeout(() => {
+                                        contactRef.current.scrollIntoView();
+                                    }, 300);
+                                }
+                            }}
+                        >
+                            Contact
+                        </li>
                     </ul>
                 )}
             </nav>
             <PortfolioContext.Provider
-                value={{ projectsRef, aboutRef, contactRef }}
+                value={{ projectsRef, aboutRef, contactRef, homeRef, pathname }}
             >
                 <Routes>
                     <Route exact path="/" element={<Home />} />

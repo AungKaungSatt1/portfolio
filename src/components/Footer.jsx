@@ -1,17 +1,51 @@
 import { GithubLogo, LinkedinLogo } from "phosphor-react";
-import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { PortfolioContext } from "../App";
 
 export default function Footer() {
-    const navigate = useNavigate();
+    const { homeRef, projectsRef, aboutRef, contactRef, pathname } =
+        useContext(PortfolioContext);
 
     return (
         <footer className="w-[85%] mx-auto mb-[25px] md:w-[95%] sm:w-[95%]">
             <div className="flex flex-col lg:flex-row md:flex-row sm:flex-col items-center lg:justify-between md:justify-between sm:items-center mb-[15px] flex-wrap">
-                <ul className="flex justify-center lg:justify-start md:justify-start sm:justify-center gap-5 [&>*]:cursor-pointer text-[1.1em] mb-[15px]">
-                    <li onClick={() => navigate("/")}>Home</li>
-                    <li onClick={() => navigate("#projects")}>Projects</li>
-                    <li onClick={() => navigate("#about")}>About</li>
-                    <li onClick={() => navigate("#contact")}>Contact</li>
+                <ul className="flex justify-center lg:justify-start md:justify-start sm:justify-center gap-5 [&>*]:cursor-pointer text-[1.1em] mb-[15px] [&>*]:hover:text-(--additional-color)">
+                    <li
+                        onClick={() =>
+                            pathname === "/"
+                                ? homeRef.current.scrollIntoView()
+                                : navigate("/")
+                        }
+                    >
+                        Home
+                    </li>
+                    <li
+                        onClick={() =>
+                            pathname === "/"
+                                ? projectsRef.current.scrollIntoView()
+                                : navigate("/")
+                        }
+                    >
+                        Projects
+                    </li>
+                    <li
+                        onClick={() =>
+                            pathname === "/"
+                                ? aboutRef.current.scrollIntoView()
+                                : navigate("/")
+                        }
+                    >
+                        About
+                    </li>
+                    <li
+                        onClick={() =>
+                            pathname === "/"
+                                ? contactRef.current.scrollIntoView()
+                                : navigate("/")
+                        }
+                    >
+                        Contact
+                    </li>
                 </ul>
                 <span className="flex text-[2em] gap-5">
                     <a href="https://github.com/AungKaungSatt1" target="_blank">

@@ -5,13 +5,16 @@ import Projects from "./Projects";
 import { Code, CodesandboxLogo } from "phosphor-react";
 import AboutMe from "./AboutMe";
 import Contact from "./Contact";
+import { useContext } from "react";
+import { PortfolioContext } from "../App";
 
 export default function Home() {
+    const { homeRef, projectsRef, contactRef } = useContext(PortfolioContext);
     let dashArray = ((80 - 10) / 2) * Math.PI * 2;
     let duration = 500;
 
     return (
-        <div>
+        <div ref={homeRef}>
             <div className="flex items-center justify-center gap-10 lg:pt-[50px] w-full h-[100vh] bg-linear-30 from-(--primary-color) to-(--secondary-color) flex-wrap">
                 <div className="flex-col justify-center md:justify-center lg:w-[40%] md:w-[75%] sm:w-[75%]">
                     <span className="flex gap-2 lg:justify-start md:justify-center sm:justify-center justify-center">
@@ -32,11 +35,17 @@ export default function Home() {
                         position job or a part-time internship with flexible,
                         corporative, and committed mind.
                     </p>
-                    <div className="flex gap-5 lg:justify-start md:justify-center  sm:justify-center justify-center [&>*]:cursor-pointer [&>*]:transition-all [&>*]:ease-in-out [&>*]:duration-500">
-                        <button className="bg-(--additional-color) text-(--white) px-[40px] py-[10px] rounded-[10px] hover:bg-(--secondary-color)">
+                    <div className="flex gap-5 lg:justify-start md:justify-center sm:justify-center justify-center [&>*]:cursor-pointer [&>*]:transition-all [&>*]:ease-in-out [&>*]:duration-500">
+                        <button
+                            className="bg-(--additional-color) text-(--white) px-[40px] py-[10px] rounded-[10px] hover:bg-blue-800"
+                            onClick={() => contactRef.current.scrollIntoView()}
+                        >
                             Get In Touch
                         </button>
-                        <button className="border border-(--dark-theme) text-(--dark-theme) px-[40px] py-[10px] rounded-[10px] hover:bg-(--dark-theme) hover:text-(--white)">
+                        <button
+                            className="border border-(--dark-theme) text-(--dark-theme) px-[40px] py-[10px] rounded-[10px] hover:bg-(--dark-theme) hover:text-(--white)"
+                            onClick={() => projectsRef.current.scrollIntoView()}
+                        >
                             Projects
                         </button>
                     </div>
