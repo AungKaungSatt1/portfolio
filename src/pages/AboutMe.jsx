@@ -36,6 +36,10 @@ export default function AboutMe() {
             </h1>
             <div className="flex flex-wrap h-[120vh] lg:h-[80vh] md:h-[90vh] sm:h-[110vh] w-full">
                 <div className="flex flex-col justify-center lg:justify-center md:justify-start sm:justify-start h-[200px] lg:h-full md:h-full items-center w-[100%] lg:w-[50%] md:w-[50%] sm:w-[100%] text-center lg:text-start md:text-start sm:text-center sm:h-[330px]">
+                    <h1 className="me-auto ms-[115px] font-bold text-[24px]">
+                        Introduction{" "}
+                        <strong className="text-(--additional-color)">.</strong>
+                    </h1>
                     <p className="w-[70%]">
                         I am Jake. And, I am Burmese, based in Malaysia,
                         learning web development, also a college student in

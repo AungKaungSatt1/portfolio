@@ -75,7 +75,15 @@ export default function Contact() {
                         Please reach out to me from the information below and
                         through the form.
                     </p>
-                    <p className="flex items-center gap-5 my-[20px]">
+                    <a
+                        href="/portfolio/Aung_Kaung_Satt_CV.pdf"
+                        download="AungKaungSatt_Resume.pdf"
+                        target="_blank"
+                        className="border my-[20px] border-(--additional-color) text-(--additional-color) px-[40px] py-[10px] rounded-[10px] hover:bg-(--additional-color) hover:text-(--white) transition-all duration-500 ease-in-out mb-[15px] cursor-pointer"
+                    >
+                        Download Resume
+                    </a>
+                    <p className="flex items-center gap-5 mb-[10px]">
                         <span>
                             <Envelope size="2em" />
                         </span>
@@ -83,7 +91,7 @@ export default function Contact() {
                             aungkgsatt56@gmail.com
                         </span>
                     </p>
-                    <p className="flex items-center gap-5 my-[20px]">
+                    <p className="flex items-center gap-5 mb-[10px]">
                         <span>
                             <Phone size="2em" />
                         </span>
