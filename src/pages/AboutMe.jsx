@@ -35,8 +35,8 @@ export default function AboutMe() {
                 <strong className="text-(--additional-color)">.</strong>
             </h1>
             <div className="flex flex-wrap h-[120vh] lg:h-[80vh] md:h-[90vh] sm:h-[110vh] w-full">
-                <div className="flex flex-col justify-center lg:justify-center md:justify-start sm:justify-start h-[200px] lg:h-full md:h-full items-center w-[100%] lg:w-[50%] md:w-[50%] sm:w-[100%] text-center lg:text-start md:text-start sm:text-center sm:h-[330px]">
-                    <h1 className="me-auto ms-[115px] font-bold text-[24px]">
+                <div className="flex flex-col justify-center lg:justify-center md:justify-center sm:justify-start h-[200px] lg:h-full md:h-[200px] mx-auto items-center w-[100%] lg:w-[50%] md:w-[55%] sm:w-[100%] text-center lg:text-start md:text-start sm:text-center sm:h-[330px]">
+                    <h1 className="hidden lg:block lg:me-auto lg:ms-[115px] font-bold text-[24px]">
                         Introduction{" "}
                         <strong className="text-(--additional-color)">.</strong>
                     </h1>
@@ -48,9 +48,14 @@ export default function AboutMe() {
                         learning Web development when I was 14 years old.
                     </p>
                 </div>
-                <div className="h-[400px] text-[100px] flex items-center my-auto justify-center w-full lg:w-[50%] md:w-[50%] sm:w-full">
-                    <img src={null} alt="" />
-                    PHOTO HERE
+                <div className="text-[100px] flex items-center my-auto justify-center w-full lg:w-[50%] mx-auto md:w-[50%] sm:w-full">
+                    <div className="bg-(--secondary-color) rounded-full">
+                        <img
+                            className="h-[400px] border border-white rounded-full"
+                            src="Profile_pic.png"
+                            alt=""
+                        />
+                    </div>
                 </div>
             </div>
             <div className="whitespace-nowrap overflow-hidden py-[20px] bg-[rgb(3,7,30,0.8)] text-white text-carousel">

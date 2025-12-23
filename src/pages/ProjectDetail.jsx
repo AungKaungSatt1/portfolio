@@ -7,6 +7,12 @@ import Footer from "../components/Footer";
 export default function ProjectDetail() {
     const { name } = useParams();
     const [project, setProject] = useState({});
+    const project_contexts = [
+        project.description,
+        project.challenges,
+        project.outcomes,
+    ];
+    const contexts_titles = ["Description", "Challenges", "Outcomes"];
 
     useEffect(() => {
         (async () => {
@@ -55,12 +61,27 @@ export default function ProjectDetail() {
                                 <GithubLogo size="2em" />
                             </Link>
                         </div>
-                        <div className="inline-flex flex-col col-span-4">
-                            <strong>Issued Year</strong>
-                            <span>2025</span>
+                        <div className="inline-flex flex-col col-span-4 [&>*]:mx-auto">
+                            <strong className="mb-[10px]">Technology</strong>
+                            <span className="inline-block text-[14px] text-center">
+                                {project.technology}
+                            </span>
                         </div>
                     </div>
-                    <div className="col-span-12 flex items-center flex-wrap justify-between w-full [&>*]:mx-auto [&>*]:col-span-4 [&>*]:w-[300px] [&>*]:h-[200px] [&>*]:relative [&>*]:perspective-normal gap-5"></div>
+                    <div className="col-span-12 flex flex-wrap justify-between w-full [&>*]:mx-auto [&>*]:col-span-4 [&>*]:lg:w-[300px] gap-5 [&>*]md:w-[300px] [&>*]:sm:w-[500px] [&>*]:w-full pt-[30px]">
+                        {project_contexts.map((context, index) => {
+                            return (
+                                <div key={index}>
+                                    <h1 className="text-[24px]">
+                                        {contexts_titles[index]}
+                                    </h1>
+                                    <p className="text-[16px] mx-auto">
+                                        {context}
+                                    </p>
+                                </div>
+                            );
+                        })}
+                    </div>
                 </div>
                 <Footer />
             </div>
