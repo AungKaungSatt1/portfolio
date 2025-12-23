@@ -53,7 +53,7 @@ export default function AboutMe() {
                         <img
                             className="h-[400px] border border-white rounded-full"
                             src="Profile_pic.png"
-                            alt=""
+                            alt="Profile"
                         />
                     </div>
                 </div>
