@@ -47,11 +47,16 @@ export default function Footer() {
                         Contact
                     </li>
                 </ul>
-                <span className="flex text-[2em] gap-5">
+                <span className="flex text-[2em] gap-5 [&>*]:hover:text-(--additional-color) [&>*]:transition-all [&>*]:duration-500 [&>*]:ease-in-out">
                     <a href="https://github.com/AungKaungSatt1" target="_blank">
                         <GithubLogo />
                     </a>
-                    <LinkedinLogo />
+                    <a
+                        href="https://www.linkedin.com/in/aung-kaung-satt-2474772b7/"
+                        target="_blank"
+                    >
+                        <LinkedinLogo />
+                    </a>
                 </span>
             </div>
             <div className="flex flex-col lg:flex-row md:flex-row sm:flex-col items-center lg:justify-between md:justify-between sm:items-center flex-wrap">

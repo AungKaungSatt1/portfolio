@@ -7,7 +7,7 @@
         "technology": "MongoDB, NodeJS, ExpressJS, React, TailwindCSS, Docker",
         "challenges": "I had trouble installing the finished Api server code onto my deskstop because of the issues in the versions, and this was when I first heard about Docker.",
         "outcomes": "Learnt the basic of Docker and Nginx, and how Docker functions.",
-        "github": "https://github.com/AungKaungSatt1/apps/tree/main/easy-recipes"
+        "github": "https://github.com/AungKaungSatt1/easy-recipes.git"
     },
     {
         "id": 2,
@@ -17,7 +17,7 @@
         "technology": "Material UI, ExpressJS, React, MongoDB",
         "challenges": "I had a bump in using React, ExpressJS, Material UI, and MongoDB. I faced a lot of challenges.",
         "outcomes": "I got to learn about pre-made UIs, Node, how object-based database works, and more about Api.",
-        "github": "https://github.com/AungKaungSatt1/apps/tree/main/x-app"
+        "github": "https://github.com/AungKaungSatt1/Social.git"
     },
     {
         "id": 3,
@@ -27,7 +27,7 @@
         "technology": "MongoDB, ExpressJS, WebSocket, CSS",
         "challenges": "I created this project to review everything I used in Social app, but there was an obstacle in posting images into the database, and cropping images",
         "outcomes": "I got to know about React image crop, and Multer.",
-        "github": "https://github.com/AungKaungSatt1/apps/tree/main/shop"
+        "github": "https://github.com/AungKaungSatt1/Shop.git"
     },
     {
         "id": 4,
@@ -37,7 +37,7 @@
         "description": "A website to give a brief information and rating about a movie that users are going to watch. (used TMDB api)",
         "challenges": "My first step into using Api and NextJS after learning the basic of React, and have a lot of trouble debugging.",
         "outcomes": "It contributes to my knowledge how Api functions, and shows me how serverside code works.",
-        "github": "https://github.com/AungKaungSatt1/apps/tree/main/next-movies"
+        "github": "https://github.com/AungKaungSatt1/Next-Movies.git"
     },
     {
         "id": 5,
@@ -47,7 +47,7 @@
         "technology": "HTML, CSS, JS",
         "challenges": "My first time learning Javascript and wanted to know more about it.",
         "outcomes": "This project helps me deep dive into Javascript.",
-        "github": "https://github.com/AungKaungSatt1/HTML-CSS-JS/tree/main/CV"
+        "github": "https://github.com/AungKaungSatt1/GuessTheColor.git"
     },
     {
         "id": 6,
@@ -57,6 +57,6 @@
         "technology": "HTML, CSS",
         "challenges": "I used to have a trouble with moving elements around and how CSS styles works when I started learning.",
         "outcomes": "I got to know how flex and grid works, how inline elements function, and frameworks related to CSS.",
-        "github": "https://github.com/AungKaungSatt1/HTML-CSS-JS/tree/main/CV"
+        "github": "https://github.com/AungKaungSatt1/CV.git"
     }
 ]
