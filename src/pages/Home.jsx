@@ -7,6 +7,7 @@ import AboutMe from "./AboutMe";
 import Contact from "./Contact";
 import { useContext } from "react";
 import { PortfolioContext } from "../App";
+import { ShaderGradient, ShaderGradientCanvas } from "@shadergradient/react";
 
 export default function Home() {
     const { homeRef, projectsRef, contactRef } = useContext(PortfolioContext);
@@ -15,8 +16,56 @@ export default function Home() {
 
     return (
         <div ref={homeRef}>
-            <div className="flex items-center justify-center gap-10 lg:pt-[50px] w-full h-[100vh] bg-linear-30 from-(--primary-color) to-(--secondary-color) flex-wrap">
-                <div className="flex-col justify-center md:justify-center lg:w-[40%] md:w-[75%] sm:w-[75%]">
+            <div className="flex items-center justify-center gap-10 lg:pt-[50px] w-full h-[100vh] bg-linear-30 from-(--primary-color) to-(--secondary-color) flex-wrap border-b border-b-white">
+                <div className="absolute w-full h-full z-0 top-0">
+                    <ShaderGradientCanvas>
+                        <ShaderGradient
+                            animate="on"
+                            axesHelper="on"
+                            bgColor1="#000000"
+                            bgColor2="#000000"
+                            brightness={1.2}
+                            cAzimuthAngle={178}
+                            cDistance={4}
+                            cPolarAngle={44}
+                            cameraZoom={0.6}
+                            color1="#cbcbf7"
+                            color2="#fcfafc"
+                            color3="#cbcbf7"
+                            destination="onCanvas"
+                            embedMode="off"
+                            envPreset="city"
+                            format="gif"
+                            fov={45}
+                            frameRate={10}
+                            gizmoHelper="hide"
+                            grain="off"
+                            lightType="3d"
+                            pixelDensity={1}
+                            positionX={0}
+                            positionY={0.9}
+                            positionZ={0}
+                            range="disabled"
+                            rangeEnd={40}
+                            rangeStart={0}
+                            reflection={0.1}
+                            rotationX={45}
+                            rotationY={0}
+                            rotationZ={0}
+                            shader="defaults"
+                            type="waterPlane"
+                            uAmplitude={0}
+                            uDensity={0.4}
+                            uFrequency={0}
+                            uSpeed={0.2}
+                            uStrength={4.5}
+                            uTime={0}
+                            wireframe={false}
+                        />
+                    </ShaderGradientCanvas>
+                </div>
+                <div className="absolute h-full w-full top-0"></div>
+                <div className="flex-col justify-center md:justify-center lg:w-[40%] md:w-[75%] sm:w-[75%] z-2">
                     <span className="flex gap-2 lg:justify-start md:justify-center sm:justify-center justify-center">
                         <h2 className="text-[3em] font-bold">I AM</h2>
                         <h1 className="pixel bg-linear-30 text-transparent bg-clip-text from-(--additional-color) to-[#7962FF] text-[4em]/18 font-bold">
@@ -154,7 +203,7 @@ export default function Home() {
                         <p>Backend</p>
                     </span>
                 </motion.div>
-                <div className="hidden lg:block md:hidden sm:hidden">
+                <div className="hidden lg:block md:hidden sm:hidden z-2">
                     <DotLottieReact
                         className="w-[80vh] h-[80vh]"
                         src="/portfolio/programming.lottie"
@@ -163,24 +212,6 @@ export default function Home() {
                     />
                 </div>
             </div>
-            {/* <div className="w-full mx-auto mb-[50px]">
-                <h1 className="text-center lg:text-start lg:ms-[85px] font-bold text-[25px] lg:text-[40px] md:text-[40px] sm:text-[25px] my-[50px]">
-                    My Best Creation{" "}
-                    <strong className="text-(--additional-color)">.</strong>
-                </h1>
-                <div className="flex flex-wrap justify-center md:justify-center sm:justify-center w-full">
-                    {projects.map((data) => {
-                        if (data.id > 4) return false;
-                        return <Card data={data} key={data.id} />;
-                    })}
-                </div>
-                <Link
-                    className="text-center block underline text-(--additional-color)"
-                    to={"/projects"}
-                >
-                    See More
-                </Link>
-            </div> */}
             <Projects />
             <div className="bg-(--secondary-color) text-(--white) flex flex-col py-[50px] mb-[50px]">
                 <h1 className="text-center lg:text-start lg:ms-[65px] font-bold text-[25px] lg:text-[40px] md:text-[40px] sm:text-[25px] mb-[25px]">
