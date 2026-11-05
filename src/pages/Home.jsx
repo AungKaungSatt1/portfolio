@@ -80,9 +80,9 @@ export default function Home() {
                         </div>
                     </div>
                     <p className="lg:w-full md:w-full sm:w-full mb-[25px] lg:text-start md:text-center sm:text-center text-center">
-                        I am a college student, looking for a part-time junior
-                        position job or a part-time internship with flexible,
-                        corporative, and committed mind.
+                        I am a college student, looking for a junior position or
+                        an internship with flexible, corporative, and committed
+                        mind.
                     </p>
                     <div className="flex gap-5 lg:justify-start md:justify-center sm:justify-center justify-center [&>*]:cursor-pointer [&>*]:transition-all [&>*]:ease-in-out [&>*]:duration-500">
                         <button
